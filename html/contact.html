@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Stackly Pharmacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/categories.css"><link rel="stylesheet" href="../css/contact.css">
+<script>if("scrollRestoration" in history)history.scrollRestoration="manual";</script>
+</head>
+<body>
+<header class="header" id="header"><div class="header-container">
+<a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+<nav class="nav-menu"><ul class="nav-list">
+<li><a href="../index.html" class="nav-link">Home</a></li><li><a href="./categories.html" class="nav-link">Categories</a></li><li><a href="./medicines.html" class="nav-link">Medicines</a></li><li><a href="./services.html" class="nav-link">Services</a></li><li><a href="./deals.html" class="nav-link">Offers</a></li><li><a href="./contact.html" class="nav-link active">Contact</a></li></ul></nav>
+<div class="header-actions"><button class="cart-btn" id="cartBtn" aria-label="View Cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+<a href="./login.html" class="btn btn-login" id="loginBtn"><i class="fa-regular fa-user"></i> <span>Login</span></a>
+<button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button></div></div></header>
+
+<div class="mobile-drawer" id="mobileDrawer"><div class="mobile-drawer-header"><a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a><button class="close-drawer" id="closeDrawer">&times;</button></div>
+<ul class="mobile-nav-list"><li><a href="../index.html" class="mobile-nav-link">Home</a></li><li><a href="./categories.html" class="mobile-nav-link">Categories</a></li><li><a href="./medicines.html" class="mobile-nav-link">Medicines</a></li><li><a href="./services.html" class="mobile-nav-link">Services</a></li><li><a href="./deals.html" class="mobile-nav-link">Offers</a></li><li><a href="./contact.html" class="mobile-nav-link active">Contact</a></li></ul>
+<div class="mobile-drawer-footer"><a href="./login.html" class="btn btn-primary btn-block" id="mobileLoginBtn">Login / Register</a></div></div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<main>
+<!-- 1. HERO -->
+<section class="page-hero"><i class="fa-solid fa-envelope float-ic f1"></i><i class="fa-solid fa-phone float-ic f2"></i><i class="fa-solid fa-plus float-ic f3"></i><i class="fa-solid fa-heart-pulse float-ic f4"></i>
+<div class="container ph-inner"><nav class="crumbs"><a href="../index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Contact</span></nav>
+<span class="badge">Get In Touch</span><h1 class="ph-title">We&rsquo;d Love To Hear From You</h1>
+<p class="ph-sub">Questions about a medicine, an order or our services? Our friendly pharmacists are only a message away.</p>
+<a href="#form" class="btn btn-primary">Send A Message <i class="fa-solid fa-arrow-down"></i></a></div></section>
+
+<!-- 2. INFO CARDS -->
+<section class="section ci-sec"><div class="container"><div class="ci-grid" id="ciGrid"><div class="ci"><span class="ci-ic"><i class="fa-solid fa-location-dot"></i></span><h4>Visit Us</h4><p>MMR Complex, Periyakollappatty<br>Chinna Thirupathi, Salem<br>Tamil Nadu 636008</p></div><div class="ci"><span class="ci-ic"><i class="fa-solid fa-phone"></i></span><h4>Call Us</h4><p>+91 40 6677 8899<br>Mon&ndash;Sat, 8 AM &ndash; 9 PM</p><a href="tel:+914066778899">Call now</a></div><div class="ci"><span class="ci-ic"><i class="fa-solid fa-envelope"></i></span><h4>Email Us</h4><p>care@stackly.com<br>Reply within 24 hours</p><a href="mailto:care@stackly.com">Send email</a></div><div class="ci"><span class="ci-ic"><i class="fa-solid fa-clock"></i></span><h4>Opening Hours</h4><p>Mon&ndash;Sat: 8:00 AM &ndash; 9:00 PM<br>Sunday: Closed</p></div></div></div></section>
+
+<!-- 3. FORM -->
+<section class="section form-sec" id="form"><div class="container">
+<div class="section-header"><span class="section-subtitle">Write To Us</span><h2 class="section-title">Send Us A Message</h2><p class="section-desc">Fill in the details below and we&rsquo;ll get back to you soon.</p></div>
+<div class="cf-wrap" id="cfWrap"><form class="cf" id="contactForm" novalidate>
+<div class="cf-row"><div class="fld" data-f="name"><label for="name">Full Name *</label><div class="inp"><i class="fa-solid fa-user"></i><input type="text" id="name" name="name" placeholder="Letters only, e.g. Priya Sharma" maxlength="40" autocomplete="name"></div><small class="err"></small></div>
+<div class="fld" data-f="email"><label for="email">Email Address *</label><div class="inp"><i class="fa-solid fa-envelope"></i><input type="email" id="email" name="email" placeholder="you@example.com" maxlength="60" autocomplete="email"></div><small class="err"></small></div></div>
+<div class="cf-row"><div class="fld" data-f="phone"><label for="phone">Phone Number *</label><div class="inp"><i class="fa-solid fa-phone"></i><span class="pre">+91</span><input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" maxlength="10" inputmode="numeric" autocomplete="tel-national"></div><small class="err"></small></div>
+<div class="fld" data-f="subject"><label for="subject">Subject *</label><div class="inp"><i class="fa-solid fa-list"></i><select id="subject" name="subject"><option value="">Select a subject</option><option>Medicine enquiry</option><option>Order or delivery</option><option>Prescription help</option><option>Book a service</option><option>Feedback</option></select></div><small class="err"></small></div></div>
+<div class="cf-row"><div class="fld" data-f="order"><label for="order">Order ID (optional)</label><div class="inp"><i class="fa-solid fa-hashtag"></i><input type="text" id="order" name="order" placeholder="e.g. STK-10245" maxlength="15"></div><small class="err"></small></div>
+<div class="fld" data-f="pref"><label for="pref">Preferred Contact *</label><div class="inp"><i class="fa-solid fa-comments"></i><select id="pref" name="pref"><option value="">Select one</option><option>Phone call</option><option>Email</option><option>WhatsApp</option></select></div><small class="err"></small></div></div>
+<div class="fld" data-f="message"><label for="message">Your Message *</label><div class="inp"><i class="fa-solid fa-pen"></i><textarea id="message" name="message" rows="5" maxlength="500" placeholder="Tell us how we can help (min 10 characters)"></textarea></div><small class="err"></small><span class="count" id="count">0 / 500</span></div>
+<div class="fld chk" data-f="consent"><label class="cb"><input type="checkbox" id="consent"> <span>I agree to be contacted about my enquiry.</span></label><small class="err"></small></div>
+<button type="submit" class="btn btn-primary cf-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button></form>
+<div class="cf-ok" id="cfOk" hidden><span><i class="fa-solid fa-check"></i></span><h3>Thank You!</h3><p>Your message has been sent. Our team will reach out within 24 hours.</p><button class="btn btn-primary" id="again" type="button">Send Another</button></div></div></div></section>
+
+<!-- 4. MAP -->
+<section class="section map-sec"><div class="container">
+<div class="section-header"><span class="section-subtitle">Find Us</span><h2 class="section-title">Visit Our Pharmacy In Salem</h2><p class="section-desc">Drop in for advice, checkups or to pick up your medicines.</p></div>
+<div class="map-box" id="mapBox"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616098770783!2d78.17140487505539!3d11.682956588526356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1791261187961!5m2!1sen!2sin" title="Stackly Pharmacy location" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div></section>
+
+<!-- 5. SPLIT -->
+<section class="section split-sec"><div class="container"><div class="split">
+<div class="split-img"><img src="../assets/g51.webp" alt="Friendly Stackly pharmacist" data-fb1="https://loremflickr.com/800/600/pharmacist,doctor?lock=41" data-fb2="https://picsum.photos/seed/contact1/800/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="split-tag"><i class="fa-solid fa-user-doctor"></i> Pharmacists On Call</span></div>
+<div class="split-txt"><span class="badge">Talk To An Expert</span><h2 class="section-title">Real People, Real Answers</h2>
+<p>Skip the guesswork. Our licensed pharmacists explain dosage, side effects and alternatives in simple words.</p>
+<ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Free, confidential advice</li><li><i class="fa-solid fa-circle-check"></i> Reply within 24 hours</li><li><i class="fa-solid fa-circle-check"></i> Phone, email or WhatsApp</li></ul>
+<a href="./services.html" class="btn btn-primary">Our Services <i class="fa-solid fa-arrow-right"></i></a></div></div></div></section>
+
+<!-- 6. STEPS -->
+<section class="section steps-sec"><div class="container">
+<div class="section-header"><span class="section-subtitle">What Happens Next</span><h2 class="section-title">Our Simple Support Process</h2></div>
+<div class="steps"><span class="steps-line"></span>
+<div class="step"><span class="step-n">1</span><h4>Submit</h4><p>Send your question through the form.</p></div>
+<div class="step"><span class="step-n">2</span><h4>Review</h4><p>A pharmacist reads your message.</p></div>
+<div class="step"><span class="step-n">3</span><h4>Reply</h4><p>We contact you your preferred way.</p></div>
+<div class="step"><span class="step-n">4</span><h4>Resolve</h4><p>Your issue is solved and followed up.</p></div></div></div></section>
+
+<!-- 7. FAQ -->
+<section class="section faq-sec"><div class="container">
+<div class="section-header"><span class="section-subtitle">Good To Know</span><h2 class="section-title">Quick Answers</h2></div>
+<div class="faq">
+<div class="faq-item"><button class="faq-q" type="button">How soon will you reply?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>We respond to every message within 24 hours, usually much sooner during opening hours.</p></div></div>
+<div class="faq-item"><button class="faq-q" type="button">Can I ask about my prescription?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Yes. Share your question and our pharmacist will guide you. For personal medical advice, always consult your doctor.</p></div></div>
+<div class="faq-item"><button class="faq-q" type="button">Is my information safe?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Your details are used only to answer your enquiry and are never shared with third parties.</p></div></div>
+<div class="faq-item"><button class="faq-q" type="button">Do you offer home delivery?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Yes, free above $30 within our service area. Contact us to confirm your location.</p></div></div></div></div></section>
+</main>
+
+<!-- 8. CTA -->
+<section class="cta" id="cta"><div class="container"><div class="cta-inner"><span class="cta-badge">We&rsquo;re Here To Help</span><h2>Need Urgent Help With Your Medicines?</h2><p>Call our pharmacist now for quick, friendly guidance &mdash; no waiting, no worries.</p>
+<div class="cta-actions"><a href="tel:+914066778899" class="btn btn-light"><i class="fa-solid fa-phone"></i> Call Now</a><a href="./products.html" class="btn btn-ghost">Shop Medicines</a></div></div></div></section>
+
+<footer class="footer"><div class="container"><div class="footer-top">
+<div class="footer-brand"><a href="../index.html" class="logo footer-logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a><p class="footer-text">Your trusted neighbourhood pharmacy for medicines, wellness and caring advice.</p>
+<div class="social-links"><a href="./404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="./404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="./404.html" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a href="./404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div></div>
+<div class="footer-nav-col"><h4 class="footer-heading">Shop by Category</h4><ul class="footer-links"><li><a href="./404.html">Medicines</a></li><li><a href="./404.html">Vitamins</a></li><li><a href="./404.html">Mother &amp; Baby</a></li><li><a href="./404.html">Health Devices</a></li></ul></div>
+<div class="footer-nav-col"><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="./categories.html">Categories</a></li><li><a href="./medicines.html">Medicines</a></li><li><a href="./services.html">Services</a></li><li><a href="./deals.html">Offers</a></li><li><a href="./contact.html">Contact</a></li></ul></div>
+<div class="footer-nav-col"><h4 class="footer-heading">Visit Us</h4><p class="footer-address">MMR Complex, Periyakollappatty<br>Chinna Thirupathi, Salem,<br>Tamil Nadu 636008<br>Open Mon&ndash;Sat, 8:00 AM &ndash; 9:00 PM</p><p class="footer-address"><a href="./404.html">+91 40 6677 8899</a><br><a href="./404.html">care@stackly.com</a></p></div></div>
+<div class="footer-bottom"><p>&copy; 2026 Stackly Pharmacy. All rights reserved. Always consult a doctor before taking medicines.</p></div></div></footer>
+
+<div class="cart-drawer" id="cartDrawer"><div class="cart-header"><h3>Your Cart (<span id="cartCount">0</span>)</h3><button class="close-cart" id="closeCart">&times;</button></div>
+<div class="cart-items" id="cartItemsContainer"><div class="empty-cart-msg">Your cart is currently empty.</div></div>
+<div class="cart-footer"><div class="cart-total"><span>Total:</span><strong id="cartTotalPrice">$0.00</strong></div><a href="./404.html" class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</a></div></div>
+<div class="modal-overlay" id="quickViewModal"><div class="modal-card quickview-card"><button class="modal-close" id="closeQuickView">&times;</button><div class="quickview-grid"><div class="quickview-img"><img id="qvImage" src="" alt="Product"></div><div class="quickview-info"><span class="badge" id="qvCategory">Category</span><h3 id="qvTitle">Product</h3><p class="qv-price" id="qvPrice">$0.00</p><p class="qv-desc">Quality-checked and sourced from licensed suppliers. Read the label and consult your pharmacist before use.</p><button type="button" class="btn btn-primary btn-block" id="qvAddToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div></div></div></div>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" id="toTopRing"/></svg><i class="fa-solid fa-arrow-up"></i></button>
+<div class="cursor-glow" id="cursorGlow"></div><div class="toast" id="toast">Item added to cart!</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../js/script.js"></script><script src="../js/contact.js"></script>
+</body></html>

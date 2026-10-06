@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Pharmacy - Your Trusted Health Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script>if("scrollRestoration" in history)history.scrollRestoration="manual";var n=performance.getEntriesByType("navigation")[0];if(n&&n.type==="reload"&&location.hash)history.replaceState(null,"",location.pathname+location.search);</script>
+</head>
+<body class="is-loading">
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
+    <div class="pl-half pl-top"></div><div class="pl-half pl-bottom"></div>
+    <i class="fa-solid fa-pills pl-fl a1"></i><i class="fa-solid fa-capsules pl-fl a2"></i><i class="fa-solid fa-plus pl-fl a3"></i><i class="fa-solid fa-heart-pulse pl-fl a4"></i><i class="fa-solid fa-syringe pl-fl a5"></i><i class="fa-solid fa-prescription-bottle-medical pl-fl a6"></i>
+    <div class="pl-inner">
+      <div class="pl-orbit">
+        <span class="pl-ring r1"></span><span class="pl-ring r2"></span><span class="pl-ring r3"></span>
+        <span class="pl-dot d1"><i class="fa-solid fa-plus"></i></span><span class="pl-dot d2"><i class="fa-solid fa-pills"></i></span>
+        <img src="./assets/stackly_logo.webp" alt="Stackly" class="pl-logo">
+      </div>
+      <div class="pl-pulse"><svg viewBox="0 0 200 40"><polyline points="0,20 50,20 62,4 78,36 90,20 200,20"/></svg></div>
+      <p class="pl-text" id="plText">Preparing your care&hellip;</p>
+      <div class="pl-bar"><span id="plBar"></span></div>
+      <span class="pl-pct" id="plPct">0%</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="./index.html" class="logo"><img src="./assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          <li><a href="./index.html" class="nav-link active">Home</a></li>
+          <li><a href="./html/categories.html" class="nav-link">Categories</a></li>
+          <li><a href="./html/medicines.html" class="nav-link">Medicines</a></li>
+          <li><a href="./html/services.html" class="nav-link">Services</a></li>
+          <li><a href="./html/deals.html" class="nav-link">Offers</a></li>
+          <li><a href="./html/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="View Cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+        <a href="./html/login.html" class="btn btn-login" id="loginBtn"><i class="fa-regular fa-user"></i> <span>Login</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="./index.html" class="logo"><img src="./assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+      <button class="close-drawer" id="closeDrawer">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="./index.html" class="mobile-nav-link active">Home</a></li>
+      <li><a href="./html/categories.html" class="mobile-nav-link">Categories</a></li>
+      <li><a href="./html/medicines.html" class="mobile-nav-link">Medicines</a></li>
+      <li><a href="./html/services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="./html/deals.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="./html/contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer"><a href="./html/login.html" class="btn btn-primary btn-block" id="mobileLoginBtn">Login / Register</a></div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <main>
+    <!-- 1. HERO -->
+    <section class="hero" id="home">
+      <i class="fa-solid fa-pills float-ic f1"></i><i class="fa-solid fa-capsules float-ic f2"></i><i class="fa-solid fa-plus float-ic f3"></i><i class="fa-solid fa-heart-pulse float-ic f4"></i>
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="badge">Licensed &amp; Trusted Pharmacy</span>
+          <h1 class="hero-title">Your Health, Delivered With Care</h1>
+          <p class="hero-subtitle">Genuine medicines, wellness essentials and expert pharmacist advice &mdash; delivered to your door, fast and safely.</p>
+          <div class="hero-buttons">
+            <a href="#featured" class="btn btn-primary">Shop Medicines <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#prescription" class="btn btn-outline">Upload Prescription</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item"><span class="stat-num">50k+</span><span class="stat-label">Products</span></div>
+            <div class="stat-item"><span class="stat-num">99%</span><span class="stat-label">Happy Patients</span></div>
+            <div class="stat-item"><span class="stat-num">24h</span><span class="stat-label">Fast Delivery</span></div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="image-wrapper">
+            <img src="./assets/g1.webp" alt="Friendly pharmacist helping a customer" class="hero-img">
+            <div class="hero-floating-card">
+              <i class="fa-solid fa-circle-check card-icon"></i>
+              <div><h4>100% Genuine</h4><p>Verified by licensed pharmacists</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span><i class="fa-solid fa-plus"></i> Genuine Medicines</span><span><i class="fa-solid fa-plus"></i> Free Home Delivery</span><span><i class="fa-solid fa-plus"></i> Licensed Pharmacists</span><span><i class="fa-solid fa-plus"></i> Easy Prescription Upload</span><span><i class="fa-solid fa-plus"></i> Secure Payments</span><span><i class="fa-solid fa-plus"></i> 24/7 Support</span><span><i class="fa-solid fa-plus"></i> Genuine Medicines</span><span><i class="fa-solid fa-plus"></i> Free Home Delivery</span><span><i class="fa-solid fa-plus"></i> Licensed Pharmacists</span><span><i class="fa-solid fa-plus"></i> Easy Prescription Upload</span><span><i class="fa-solid fa-plus"></i> Secure Payments</span><span><i class="fa-solid fa-plus"></i> 24/7 Support</span></div></div>
+
+    <!-- 2. CATEGORIES (flip cards) -->
+    <section class="categories section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Shop by Need</span>
+          <h2 class="section-title">Explore Health Categories</h2>
+          <p class="section-desc">Everything your family needs for everyday health, in one trusted place.</p>
+        </div>
+        <div class="categories-grid">
+          <div class="category-card flip-card" tabindex="0"><div class="flip-inner">
+            <div class="flip-front"><i class="fa-solid fa-pills cat-icon"></i><h3>Medicines</h3><p>Prescription &amp; OTC</p></div>
+            <div class="flip-back"><h3>Genuine Medicines</h3><p>Pain relief, cold &amp; flu, antibiotics and chronic care essentials.</p><a href="./html/404.html" class="cat-link">Browse <i class="fa-solid fa-chevron-right"></i></a></div>
+          </div></div>
+          <div class="category-card flip-card" tabindex="0"><div class="flip-inner">
+            <div class="flip-front"><i class="fa-solid fa-capsules cat-icon"></i><h3>Vitamins</h3><p>Supplements &amp; Nutrition</p></div>
+            <div class="flip-back"><h3>Boost Immunity</h3><p>Multivitamins, omega-3, calcium and daily wellness boosters.</p><a href="./html/404.html" class="cat-link">Browse <i class="fa-solid fa-chevron-right"></i></a></div>
+          </div></div>
+          <div class="category-card flip-card" tabindex="0"><div class="flip-inner">
+            <div class="flip-front"><i class="fa-solid fa-baby cat-icon"></i><h3>Mother &amp; Baby</h3><p>Gentle Family Care</p></div>
+            <div class="flip-back"><h3>Safe &amp; Gentle</h3><p>Baby care, diapers, nutrition and pregnancy essentials.</p><a href="./html/404.html" class="cat-link">Browse <i class="fa-solid fa-chevron-right"></i></a></div>
+          </div></div>
+          <div class="category-card flip-card" tabindex="0"><div class="flip-inner">
+            <div class="flip-front"><i class="fa-solid fa-stethoscope cat-icon"></i><h3>Health Devices</h3><p>Monitors &amp; Diagnostics</p></div>
+            <div class="flip-back"><h3>Track at Home</h3><p>BP monitors, glucometers, thermometers and pulse oximeters.</p><a href="./html/404.html" class="cat-link">Browse <i class="fa-solid fa-chevron-right"></i></a></div>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURED PRODUCTS -->
+    <section class="featured section" id="featured">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Top Picks</span>
+          <h2 class="section-title">Bestselling Health Products</h2>
+          <p class="section-desc">Pharmacist-approved essentials loved by thousands of families.</p>
+        </div>
+        <div class="products-grid">
+          <div class="product-card" data-id="1" data-title="Daily Multivitamin Tablets" data-price="18" data-category="Vitamins" data-image="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=80">
+            <div class="product-img-box"><span class="product-tag">Best Seller</span><img src="./assets/g2.webp" alt="Multivitamin tablets bottle">
+              <div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content">
+              <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(128)</span></div>
+              <h3 class="product-title">Daily Multivitamin Tablets</h3>
+              <p class="product-price">$18.00 <span class="old-price">$24.00</span></p>
+              <button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="2" data-title="Digital BP Monitor" data-price="45" data-category="Devices" data-image="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=900&q=80">
+            <div class="product-img-box"><span class="product-tag hot">Hot</span><img src="./assets/g3.webp" alt="Digital blood pressure monitor">
+              <div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content">
+              <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span>(86)</span></div>
+              <h3 class="product-title">Digital BP Monitor</h3>
+              <p class="product-price">$45.00</p>
+              <button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="3" data-title="Immunity Support Syrup" data-price="12" data-category="Wellness" data-image="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=80">
+            <div class="product-img-box"><img src="./assets/g4.webp" alt="Herbal immunity syrup bottle">
+              <div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content">
+              <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(64)</span></div>
+              <h3 class="product-title">Immunity Support Syrup</h3>
+              <p class="product-price">$12.00</p>
+              <button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="4" data-title="First Aid Kit Essentials" data-price="29" data-category="First Aid" data-image="https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=900&q=80">
+            <div class="product-img-box"><span class="product-tag">Sale</span><img src="./assets/g5.webp" alt="First aid kit">
+              <div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content">
+              <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(92)</span></div>
+              <h3 class="product-title">First Aid Kit Essentials</h3>
+              <p class="product-price">$29.00 <span class="old-price">$36.00</span></p>
+              <button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SERVICES -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">What We Offer</span>
+          <h2 class="section-title">Care Beyond The Counter</h2>
+          <p class="section-desc">Services designed to make healthcare simple, quick and personal.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card"><i class="fa-solid fa-user-doctor"></i><h4>Pharmacist Consultation</h4><p>Free advice on dosage, side effects and interactions.</p></div>
+          <div class="service-card"><i class="fa-solid fa-truck-medical"></i><h4>Home Delivery</h4><p>Temperature-safe doorstep delivery within 24 hours.</p></div>
+          <div class="service-card"><i class="fa-solid fa-vial"></i><h4>Lab Tests at Home</h4><p>Book sample collection and get reports online.</p></div>
+          <div class="service-card"><i class="fa-solid fa-bell"></i><h4>Refill Reminders</h4><p>Never miss a dose with automatic refill alerts.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PRESCRIPTION STEPS -->
+    <section class="rx section" id="prescription">
+      <div class="container">
+        <div class="rx-wrapper">
+          <div class="rx-img"><img src="./assets/g7.webp" alt="Pharmacist preparing a prescription"></div>
+          <div class="rx-content">
+            <span class="badge">Easy Ordering</span>
+            <h2 class="section-title">Order With a Prescription in 3 Steps</h2>
+            <ol class="rx-steps">
+              <li><span>1</span><div><h4>Upload</h4><p>Snap a photo of your prescription.</p></div></li>
+              <li><span>2</span><div><h4>Verify</h4><p>Our pharmacist checks and confirms it.</p></div></li>
+              <li><span>3</span><div><h4>Receive</h4><p>Get medicines delivered safely home.</p></div></li>
+            </ol>
+            <a href="./html/404.html" class="btn btn-primary"><i class="fa-solid fa-file-arrow-up"></i> Upload Prescription</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DEALS -->
+    <section class="deals section" id="deals">
+      <div class="container">
+        <div class="deals-wrapper">
+          <div class="deals-content">
+            <span class="badge">Limited Offer</span>
+            <h2>Health Deal of the Week</h2>
+            <h3>Wellness Combo Pack</h3>
+            <p>Save up to 35% on vitamins, immunity boosters and daily essentials. Stock up and stay healthy.</p>
+            <div class="countdown" id="countdown">
+              <div class="time-unit"><span id="days">02</span><p>Days</p></div>
+              <div class="time-unit"><span id="hours">14</span><p>Hours</p></div>
+              <div class="time-unit"><span id="minutes">38</span><p>Mins</p></div>
+              <div class="time-unit"><span id="seconds">45</span><p>Secs</p></div>
+            </div>
+            <a href="./html/deals.html" class="btn btn-primary">Claim Offer</a>
+          </div>
+          <div class="deals-img-box"><img src="./assets/g6.webp" alt="Wellness combo pack of vitamins"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. REVIEWS -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Patient Feedback</span>
+          <h2 class="section-title">Trusted by Families Everywhere</h2>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-summary">
+            <span class="rating-score">4.9<small>/5</small></span>
+            <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>Average rating from 5,000+ verified customers</p>
+          </div>
+          <div class="review-card">
+            <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"My monthly medicines arrive on time, well packed, and the pharmacist always answers my questions patiently."</p>
+            <div class="reviewer"><span class="avatar">SJ</span><div><h5>Sarah Jenkins</h5><span>Regular Customer</span></div></div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"Prescription upload was effortless and delivery took less than a day. Genuine products at fair prices."</p>
+            <div class="reviewer"><span class="avatar">DM</span><div><h5>David Miller</h5><span>Caregiver</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. TIPS + FEATURES -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Wellness Corner</span>
+          <h2 class="section-title">Daily Health Tips</h2>
+        </div>
+        <div class="tips-grid">
+          <div class="tip"><i class="fa-solid fa-droplet"></i><h4>Stay Hydrated</h4><p>Aim for 8 glasses of water a day.</p></div>
+          <div class="tip"><i class="fa-solid fa-moon"></i><h4>Sleep Well</h4><p>7&ndash;8 hours helps recovery and immunity.</p></div>
+          <div class="tip"><i class="fa-solid fa-apple-whole"></i><h4>Eat Colourful</h4><p>Fruits and veggies supply key vitamins.</p></div>
+        </div>
+        <div class="features-bar">
+          <div class="feature-box"><i class="fa-solid fa-truck-fast"></i><div><h4>Free Delivery</h4><p>On orders above $30</p></div></div>
+          <div class="feature-box"><i class="fa-solid fa-shield-halved"></i><div><h4>100% Genuine</h4><p>Sourced from licensed suppliers</p></div></div>
+          <div class="feature-box"><i class="fa-solid fa-rotate-left"></i><div><h4>Easy Returns</h4><p>Hassle-free on sealed items</p></div></div>
+          <div class="feature-box"><i class="fa-solid fa-headset"></i><div><h4>Expert Support</h4><p>Pharmacists on call 24/7</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="cta-badge">Feel Better Today</span>
+        <h2>Your Health Deserves the Best Care</h2>
+        <p>Order medicines online or talk to a pharmacist now &mdash; genuine products, fast delivery, friendly help.</p>
+        <div class="cta-actions">
+          <a href="./html/products.html" class="btn btn-light">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="./html/contact.html" class="btn btn-ghost">Talk to a Pharmacist</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="./index.html" class="logo footer-logo"><img src="./assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+          <p class="footer-text">Your trusted neighbourhood pharmacy for medicines, wellness and caring advice.</p>
+          <div class="social-links">
+            <a href="./html/404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="./html/404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="./html/404.html" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="./html/404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Shop by Category</h4>
+          <ul class="footer-links">
+            <li><a href="./html/404.html">Medicines</a></li><li><a href="./html/404.html">Vitamins</a></li>
+            <li><a href="./html/404.html">Mother &amp; Baby</a></li><li><a href="./html/404.html">Health Devices</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./index.html">Home</a></li><li><a href="./html/categories.html">Categories</a></li>
+            <li><a href="./html/medicines.html">Medicines</a></li><li><a href="./html/services.html">Services</a></li>
+            <li><a href="./html/deals.html">Offers</a></li><li><a href="./html/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <p class="footer-address">MMR Complex, Periyakollappatty<br>Chinna Thirupathi, Salem,<br>Tamil Nadu 636008<br>Open Mon&ndash;Sat, 8:00 AM &ndash; 9:00 PM</p>
+          <p class="footer-address"><a href="./html/404.html">+91 40 6677 8899</a><br><a href="./html/404.html">care@stackly.com</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Stackly Pharmacy. All rights reserved. Always consult a doctor before taking medicines.</p></div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header"><h3>Your Cart (<span id="cartCount">0</span>)</h3><button class="close-cart" id="closeCart">&times;</button></div>
+    <div class="cart-items" id="cartItemsContainer"><div class="empty-cart-msg">Your cart is currently empty.</div></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total:</span><strong id="cartTotalPrice">$0.00</strong></div>
+      <a href="./html/404.html" class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card quickview-card">
+      <button class="modal-close" id="closeQuickView">&times;</button>
+      <div class="quickview-grid">
+        <div class="quickview-img"><img id="qvImage" src="" alt="Product"></div>
+        <div class="quickview-info">
+          <span class="badge" id="qvCategory">Category</span>
+          <h3 id="qvTitle">Product</h3>
+          <p class="qv-price" id="qvPrice">$0.00</p>
+          <p class="qv-desc">Quality-checked and sourced from licensed suppliers. Read the label and consult your pharmacist before use.</p>
+          <button type="button" class="btn btn-primary btn-block" id="qvAddToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" id="toTopRing"/></svg><i class="fa-solid fa-arrow-up"></i></button>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="toast" id="toast">Item added to cart!</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

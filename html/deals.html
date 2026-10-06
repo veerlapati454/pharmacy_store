@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offers - Stackly Pharmacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/categories.css"><link rel="stylesheet" href="../css/deals.css">
+<script>if("scrollRestoration" in history)history.scrollRestoration="manual";</script>
+</head>
+<body>
+<header class="header" id="header"><div class="header-container">
+<a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+<nav class="nav-menu"><ul class="nav-list">
+<li><a href="../index.html" class="nav-link">Home</a></li><li><a href="./categories.html" class="nav-link">Categories</a></li><li><a href="./medicines.html" class="nav-link">Medicines</a></li><li><a href="./services.html" class="nav-link">Services</a></li><li><a href="./deals.html" class="nav-link active">Offers</a></li><li><a href="./contact.html" class="nav-link">Contact</a></li></ul></nav>
+<div class="header-actions"><button class="cart-btn" id="cartBtn" aria-label="View Cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+<a href="./login.html" class="btn btn-login" id="loginBtn"><i class="fa-regular fa-user"></i> <span>Login</span></a>
+<button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button></div></div></header>
+
+<div class="mobile-drawer" id="mobileDrawer"><div class="mobile-drawer-header"><a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a><button class="close-drawer" id="closeDrawer">&times;</button></div>
+<ul class="mobile-nav-list"><li><a href="../index.html" class="mobile-nav-link">Home</a></li><li><a href="./categories.html" class="mobile-nav-link">Categories</a></li><li><a href="./medicines.html" class="mobile-nav-link">Medicines</a></li><li><a href="./services.html" class="mobile-nav-link">Services</a></li><li><a href="./deals.html" class="mobile-nav-link active">Offers</a></li><li><a href="./contact.html" class="mobile-nav-link">Contact</a></li></ul>
+<div class="mobile-drawer-footer"><a href="./login.html" class="btn btn-primary btn-block" id="mobileLoginBtn">Login / Register</a></div></div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<main>
+<!-- 1. HERO -->
+<section class="page-hero">
+<i class="fa-solid fa-percent float-ic f1"></i><i class="fa-solid fa-tag float-ic f2"></i><i class="fa-solid fa-plus float-ic f3"></i><i class="fa-solid fa-gift float-ic f4"></i>
+<div class="container ph-inner"><nav class="crumbs"><a href="../index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Offers</span></nav>
+<span class="badge">Limited Time Deals</span><h1 class="ph-title">Big Savings On Everyday Health</h1>
+<p class="ph-sub">Genuine medicines and wellness products at prices that care for your wallet too. Grab a coupon before it ends.</p>
+<div class="cd" id="countdown"><div><b id="cdD">00</b><span>Days</span></div><div><b id="cdH">00</b><span>Hours</span></div><div><b id="cdM">00</b><span>Mins</span></div><div><b id="cdS">00</b><span>Secs</span></div></div></div></section>
+
+<!-- 2. COUPON FLIP CARDS -->
+<section class="section of-sec" id="coupons"><div class="container">
+<div class="section-header"><span class="section-subtitle">Today&rsquo;s Coupons</span><h2 class="section-title">Pick An Offer, Flip &amp; Copy The Code</h2><p class="section-desc">Hover or tap a card to reveal its coupon code.</p></div>
+<div class="of-grid" id="ofGrid">
+<div class="of-card" tabindex="0"><div class="of-inner"><div class="of-front"><img src="../assets/g41.webp" alt="Flat 20% Off" data-fb1="https://loremflickr.com/800/600/pills,medicine?lock=30" data-fb2="https://picsum.photos/seed/offer0/800/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><div class="of-over"><span class="of-ic"><i class="fa-solid fa-pills"></i></span><h3>Flat 20% Off</h3><p>Medicines</p></div></div>
+<div class="of-back"><span class="of-tag">Coupon</span><h3>Flat 20% Off</h3><p>On all OTC medicines over $15</p><button class="of-code" type="button" data-code="SAVE20"><span>SAVE20</span><i class="fa-regular fa-copy"></i></button><a href="./products.html" class="of-link">Shop Now <i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+<div class="of-card" tabindex="0"><div class="of-inner"><div class="of-front"><img src="../assets/g42.webp" alt="Buy 1 Get 1" data-fb1="https://loremflickr.com/800/600/vitamins,supplements?lock=31" data-fb2="https://picsum.photos/seed/offer1/800/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><div class="of-over"><span class="of-ic"><i class="fa-solid fa-capsules"></i></span><h3>Buy 1 Get 1</h3><p>Vitamins</p></div></div>
+<div class="of-back"><span class="of-tag">Coupon</span><h3>Buy 1 Get 1</h3><p>Selected multivitamins and omega-3</p><button class="of-code" type="button" data-code="VITA2X"><span>VITA2X</span><i class="fa-regular fa-copy"></i></button><a href="./products.html" class="of-link">Shop Now <i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+<div class="of-card" tabindex="0"><div class="of-inner"><div class="of-front"><img src="../assets/g43.webp" alt="30% Off" data-fb1="https://loremflickr.com/800/600/baby,mother?lock=32" data-fb2="https://picsum.photos/seed/offer2/800/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><div class="of-over"><span class="of-ic"><i class="fa-solid fa-baby"></i></span><h3>30% Off</h3><p>Mother &amp; Baby</p></div></div>
+<div class="of-back"><span class="of-tag">Coupon</span><h3>30% Off</h3><p>Baby care, diapers and wipes</p><button class="of-code" type="button" data-code="BABY30"><span>BABY30</span><i class="fa-regular fa-copy"></i></button><a href="./products.html" class="of-link">Shop Now <i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+<div class="of-card" tabindex="0"><div class="of-inner"><div class="of-front"><img src="../assets/g44.webp" alt="Free Checkup" data-fb1="https://loremflickr.com/800/600/stethoscope,doctor?lock=33" data-fb2="https://picsum.photos/seed/offer3/800/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><div class="of-over"><span class="of-ic"><i class="fa-solid fa-stethoscope"></i></span><h3>Free Checkup</h3><p>Health Devices</p></div></div>
+<div class="of-back"><span class="of-tag">Coupon</span><h3>Free Checkup</h3><p>Free BP check with any device</p><button class="of-code" type="button" data-code="HEALTHY"><span>HEALTHY</span><i class="fa-regular fa-copy"></i></button><a href="./products.html" class="of-link">Shop Now <i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+<div class="of-card" tabindex="0"><div class="of-inner"><div class="of-front"><img src="../assets/g45.webp" alt="15% Off" data-fb1="https://loremflickr.com/800/600/diabetes,glucose?lock=34" data-fb2="https://picsum.photos/seed/offer4/800/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><div class="of-over"><span class="of-ic"><i class="fa-solid fa-droplet"></i></span><h3>15% Off</h3><p>Diabetes Care</p></div></div>
+<div class="of-back"><span class="of-tag">Coupon</span><h3>15% Off</h3><p>Test strips and monitors</p><button class="of-code" type="button" data-code="SUGAR15"><span>SUGAR15</span><i class="fa-regular fa-copy"></i></button><a href="./products.html" class="of-link">Shop Now <i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+<div class="of-card" tabindex="0"><div class="of-inner"><div class="of-front"><img src="../assets/g46.webp" alt="Free Delivery" data-fb1="https://loremflickr.com/800/600/pharmacy,delivery?lock=35" data-fb2="https://picsum.photos/seed/offer5/800/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><div class="of-over"><span class="of-ic"><i class="fa-solid fa-truck-fast"></i></span><h3>Free Delivery</h3><p>First Order</p></div></div>
+<div class="of-back"><span class="of-tag">Coupon</span><h3>Free Delivery</h3><p>No minimum on your first order</p><button class="of-code" type="button" data-code="FIRSTFREE"><span>FIRSTFREE</span><i class="fa-regular fa-copy"></i></button><a href="./products.html" class="of-link">Shop Now <i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+</div></div></section>
+
+<!-- 3. FLASH DEAL SPLIT -->
+<section class="section split-sec"><div class="contai" alt="Pharmacist with customer" data-fb1="https://loremflickr.com/800/600/pharmacist,health?lock=38" data-fb2="https://picsum.photos/seed/offer8/800/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="split-tag"><i class="fa-solid fa-bolt"></i> Flash Deal Today</span></div>
+<div class="split-txt"><span class="badge">Member Special</span><h2 class="section-title">Extra 10% Off On Your Monthly Refills</h2>
+<p>Set up auto-refills for your regular medicines and save every month, with free delivery and timely reminders.</p>
+<ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Save 10% on every refill</li><li><i class="fa-solid fa-circle-check"></i> Free doorstep delivery</li><li><i class="fa-solid fa-circle-check"></i> Skip or cancel anytime</li></ul>
+<a href="./services.html" class="btn btn-primary">Start Saving <i class="fa-solid fa-arrow-right"></i></a></div></div></div></section>
+
+<!-- 4. STATS -->
+<section class="stats-sec"><div class="container stats-grid">
+<div class="stat"><span class="cnt" data-to="30" data-suf="%">0</span><p>Max Savings</p></div>
+<div class="stat"><span class="cnt" data-to="50" data-suf="+">0</span><p>Live Offers</p></div>
+<div class="stat"><span class="cnt" data-to="12" data-suf="k+">0</span><p>Orders Saved On</p></div>
+<div class="stat"><span class="cnt" data-to="99" data-suf="%">0</span><p>Happy Customers</p></div></div></section>
+
+<!-- 5. BUNDLES -->
+<section class="section bn-sec"><div class="container">
+<div class="section-header"><span class="section-subtitle">Combo Packs</span><h2 class="section-title">Bundles That Save More</h2><p class="section-desc">Hand-picked by our pharmacists for common health needs.</p></div>
+<div class="bn-grid" id="bnGrid">
+<article class="bn"><div class="bn-img"><img src="../assets/g48.webp" alt="Family Care Pack" data-fb1="https://loremflickr.com/700/600/family,medicine?lock=35" data-fb2="https://picsum.photos/seed/offer5/700/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="bn-badge">Save 25%</span></div><div class="bn-body"><h3>Family Care Pack</h3><p>Pain relief, cold &amp; flu, first-aid basics</p><div class="bn-price"><strong>$49</strong><del>$65</del></div><a href="./products.html" class="btn btn-primary">Get Bundle <i class="fa-solid fa-arrow-right"></i></a></div></article>
+<article class="bn"><div class="bn-img"><img src="../assets/g49.webp" alt="Immunity Booster" data-fb1="https://loremflickr.com/700/600/vitamins,orange?lock=36" data-fb2="https://picsum.photos/seed/offer6/700/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="bn-badge">Save 24%</span></div><div class="bn-body"><h3>Immunity Booster</h3><p>Vitamin C, zinc, D3 and herbal tonic</p><div class="bn-price"><strong>$32</strong><del>$42</del></div><a href="./products.html" class="btn btn-primary">Get Bundle <i class="fa-solid fa-arrow-right"></i></a></div></article>
+<article class="bn"><div class="bn-img"><img src="../assets/g50.webp" alt="Diabetes Essentials" data-fb1="https://loremflickr.com/700/600/glucose,health?lock=37" data-fb2="https://picsum.photos/seed/offer7/700/600" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="bn-badge">Save 24%</span></div><div class="bn-body"><h3>Diabetes Essentials</h3><p>Strips, lancets and sugar-free foods</p><div class="bn-price"><strong>$38</strong><del>$50</del></div><a href="./products.html" class="btn btn-primary">Get Bundle <i class="fa-solid fa-arrow-right"></i></a></div></article>
+</div></div></section>
+
+<!-- 6. HOW TO REDEEM -->
+<section class="section steps-sec"><div class="container">
+<div class="section-header"><span class="section-subtitle">Simple Process</span><h2 class="section-title">Redeem Your Offer In 4 Steps</h2></div>
+<div class="steps"><span class="steps-line"></span>
+<div class="step"><span class="step-n">1</span><h4>Pick</h4><p>Choose a coupon you like.</p></div>
+<div class="step"><span class="step-n">2</span><h4>Copy</h4><p>Flip the card and copy the code.</p></div>
+<div class="step"><span class="step-n">3</span><h4>Shop</h4><p>Add eligible items to your cart.</p></div>
+<div class="step"><span class="step-n">4</span><h4>Save</h4><p>Apply the code at checkout.</p></div></div></div></section>
+
+<!-- 7. FAQ -->
+<section class="section faq-sec"><div class="container">
+<div class="section-header"><span class="section-subtitle">Good To Know</span><h2 class="section-title">Offer Questions, Answered</h2></div>
+<div class="faq">
+<div class="faq-item"><button class="faq-q" type="button">Can I combine two coupons?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>One coupon can be used per order. Choose the one that gives you the biggest saving.</p></div></div>
+<div class="faq-item"><button class="faq-q" type="button">Do offers apply to prescription medicines?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Some offers apply to prescription items too. Each coupon lists what it covers.</p></div></div>
+<div class="faq-item"><button class="faq-q" type="button">When do the offers expire?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>The countdown at the top shows when the current deals end. New ones start regularly.</p></div></div>
+<div class="faq-item"><button class="faq-q" type="button">My code isn&rsquo;t working, what do I do?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Check the minimum order and eligible items, then contact our team and we will help right away.</p></div></div></div></div></section>
+</main>
+
+<!-- 8. CTA -->
+<section class="cta" id="cta"><div class="container"><div class="cta-inner"><span class="cta-badge">Don&rsquo;t Miss Out</span><h2>Get Exclusive Offers Straight To Your Inbox</h2><p>Join our family and be the first to know about new deals, coupons and health tips.</p>
+<form class="news" onsubmit="return false"><input type="email" placeholder="Enter your email" aria-label="Email"><button class="btn btn-light" type="button" id="subBtn">Subscribe <i class="fa-solid fa-paper-plane"></i></button></form>
+<div class="cta-actions"><a href="./products.html" class="btn btn-ghost">Shop All Medicines</a></div></div></div></section>
+
+<footer class="footer"><div class="container"><div class="footer-top">
+<div class="footer-brand"><a href="../index.html" class="logo footer-logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a><p class="footer-text">Your trusted neighbourhood pharmacy for medicines, wellness and caring advice.</p>
+<div class="social-links"><a href="./404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="./404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="./404.html" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a href="./404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div></div>
+<div class="footer-nav-col"><h4 class="footer-heading">Shop by Category</h4><ul class="footer-links"><li><a href="./404.html">Medicines</a></li><li><a href="./404.html">Vitamins</a></li><li><a href="./404.html">Mother &amp; Baby</a></li><li><a href="./404.html">Health Devices</a></li></ul></div>
+<div class="footer-nav-col"><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="./categories.html">Categories</a></li><li><a href="./medicines.html">Medicines</a></li><li><a href="./services.html">Services</a></li><li><a href="./deals.html">Offers</a></li><li><a href="./contact.html">Contact</a></li></ul></div>
+<div class="footer-nav-col"><h4 class="footer-heading">Visit Us</h4><p class="footer-address">MMR Complex, Periyakollappatty<br>Chinna Thirupathi, Salem,<br>Tamil Nadu 636008<br>Open Mon&ndash;Sat, 8:00 AM &ndash; 9:00 PM</p><p class="footer-address"><a href="./404.html">+91 40 6677 8899</a><br><a href="./404.html">care@stackly.com</a></p></div></div>
+<div class="footer-bottom"><p>&copy; 2026 Stackly Pharmacy. All rights reserved. Always consult a doctor before taking medicines.</p></div></div></footer>
+
+<div class="cart-drawer" id="cartDrawer"><div class="cart-header"><h3>Your Cart (<span id="cartCount">0</span>)</h3><button class="close-cart" id="closeCart">&times;</button></div>
+<div class="cart-items" id="cartItemsContainer"><div class="empty-cart-msg">Your cart is currently empty.</div></div>
+<div class="cart-footer"><div class="cart-total"><span>Total:</span><strong id="cartTotalPrice">$0.00</strong></div><a href="./404.html" class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</a></div></div>
+<div class="modal-overlay" id="quickViewModal"><div class="modal-card quickview-card"><button class="modal-close" id="closeQuickView">&times;</button><div class="quickview-grid"><div class="quickview-img"><img id="qvImage" src="" alt="Product"></div><div class="quickview-info"><span class="badge" id="qvCategory">Category</span><h3 id="qvTitle">Product</h3><p class="qv-price" id="qvPrice">$0.00</p><p class="qv-desc">Quality-checked and sourced from licensed suppliers. Read the label and consult your pharmacist before use.</p><button type="button" class="btn btn-primary btn-block" id="qvAddToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div></div></div></div>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" id="toTopRing"/></svg><i class="fa-solid fa-arrow-up"></i></button>
+<div class="cursor-glow" id="cursorGlow"></div><div class="toast" id="toast">Item added to cart!</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../js/script.js"></script><script src="../js/deals.js"></script>
+</body></html>

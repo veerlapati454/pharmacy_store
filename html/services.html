@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - Stackly Pharmacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/styles.css"><link rel="stylesheet" href="../css/categories.css"><link rel="stylesheet" href="../css/services.css">
+<script>if("scrollRestoration" in history)history.scrollRestoration="manual";</script>
+</head>
+<body>
+<header class="header" id="header"><div class="header-container">
+<a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+<nav class="nav-menu"><ul class="nav-list">
+<li><a href="../index.html" class="nav-link">Home</a></li><li><a href="./categories.html" class="nav-link">Categories</a></li><li><a href="./medicines.html" class="nav-link">Medicines</a></li><li><a href="./services.html" class="nav-link active">Services</a></li><li><a href="./deals.html" class="nav-link">Offers</a></li><li><a href="./contact.html" class="nav-link">Contact</a></li></ul></nav>
+<div class="header-actions"><button class="cart-btn" id="cartBtn" aria-label="View Cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+<a href="./login.html" class="btn btn-login" id="loginBtn"><i class="fa-regular fa-user"></i> <span>Login</span></a>
+<button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button></div></div></header>
+
+<div class="mobile-drawer" id="mobileDrawer"><div class="mobile-drawer-header"><a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a><button class="close-drawer" id="closeDrawer">&times;</button></div>
+<ul class="mobile-nav-list"><li><a href="../index.html" class="mobile-nav-link">Home</a></li><li><a href="./categories.html" class="mobile-nav-link">Categories</a></li><li><a href="./medicines.html" class="mobile-nav-link">Medicines</a></li><li><a href="./services.html" class="mobile-nav-link active">Services</a></li><li><a href="./deals.html" class="mobile-nav-link">Offers</a></li><li><a href="./contact.html" class="mobile-nav-link">Contact</a></li></ul>
+<div class="mobile-drawer-footer"><a href="./login.html" class="btn btn-primary btn-block" id="mobileLoginBtn">Login / Register</a></div></div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<main>
+<!-- 1. HERO -->
+<section class="page-hero">
+<i class="fa-solid fa-pills float-ic f1"></i><i class="fa-solid fa-capsules float-ic f2"></i><i class="fa-solid fa-plus float-ic f3"></i><i class="fa-solid fa-heart-pulse float-ic f4"></i>
+<div class="container ph-inner">
+<nav class="crumbs"><a href="../index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Services</span></nav>
+<span class="badge">Our Services</span>
+<h1 class="ph-title">Care That Goes Beyond The Counter</h1>
+<p class="ph-sub">From home delivery to health checks and expert advice &mdash; everything your family needs, delivered with a caring touch.</p>
+<div class="sv-hero-btns"><a href="#services" class="btn btn-primary">Explore Services <i class="fa-solid fa-arrow-down"></i></a><a href="./contact.html" class="btn btn-outline">Book Appointment</a></div>
+</div></section>
+
+<!-- 2. SERVICES GRID -->
+<section class="section sv-sec" id="services"><div class="container">
+<div class="section-header"><span class="section-subtitle">What We Offer</span><h2 class="section-title">Pharmacy Services For Every Need</h2><p class="section-desc">Choose a service to see what&rsquo;s included.</p></div>
+<div class="sv-tabs" id="svTabs"><button class="sv-tab active" type="button"><i class="fa-solid fa-truck-fast"></i><span>Prescription Delivery</span></button><button class="sv-tab" type="button"><i class="fa-solid fa-user-doctor"></i><span>Pharmacist Consultation</span></button><button class="sv-tab" type="button"><i class="fa-solid fa-stethoscope"></i><span>Health Checkups</span></button><button class="sv-tab" type="button"><i class="fa-solid fa-droplet"></i><span>Diabetes Management</span></button><button class="sv-tab" type="button"><i class="fa-solid fa-syringe"></i><span>Vaccination</span></button><button class="sv-tab" type="button"><i class="fa-solid fa-rotate"></i><span>Medicine Refills</span></button><button class="sv-tab" type="button"><i class="fa-solid fa-baby"></i><span>Mother &amp; Baby Care</span></button><button class="sv-tab" type="button"><i class="fa-solid fa-spa"></i><span>Skin &amp; Wellness Advice</span></button></div>
+<div class="sv-stage" id="svGrid"><span class="sv-bar"></span>
+<div class="sv-panel active"><div class="sv-media"><img src="../assets/g31.webp" alt="Prescription Delivery" data-fb1="https://loremflickr.com/900/700/pharmacy,delivery?lock=11" data-fb2="https://picsum.photos/seed/stackly0/900/700" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="sv-float"><i class="fa-solid fa-truck-fast"></i> Free above $30</span></div>
+<div class="sv-info"><span class="sv-no">01 / 08</span><h3>Prescription Delivery</h3><p>Your prescriptions, safely packed and delivered to your door the same day.</p><ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Same-day delivery</li><li><i class="fa-solid fa-circle-check"></i> Cold-chain packaging</li><li><i class="fa-solid fa-circle-check"></i> Live order tracking</li></ul><a href="./contact.html" class="btn btn-primary">Book Now <i class="fa-solid fa-arrow-right"></i></a></div></div>
+<div class="sv-panel"><div class="sv-media"><img src="../assets/g32.webp" alt="Pharmacist Consultation" data-fb1="https://loremflickr.com/900/700/pharmacist,medicine?lock=12" data-fb2="https://picsum.photos/seed/stackly1/900/700" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="sv-float"><i class="fa-solid fa-user-doctor"></i> Always free</span></div>
+<div class="sv-info"><span class="sv-no">02 / 08</span><h3>Pharmacist Consultation</h3><p>One-to-one guidance on dosage, side effects and medicine interactions.</p><ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> In-store or by phone</li><li><i class="fa-solid fa-circle-check"></i> Private and confidential</li><li><i class="fa-solid fa-circle-check"></i> Clear written advice</li></ul><a href="./contact.html" class="btn btn-primary">Book Now <i class="fa-solid fa-arrow-right"></i></a></div></div>
+<div class="sv-panel"><div class="sv-media"><img src="../assets/g33.webp" alt="Health Checkups" data-fb1="https://loremflickr.com/900/700/blood-pressure,doctor?lock=13" data-fb2="https://picsum.photos/seed/stackly2/900/700" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="sv-float"><i class="fa-solid fa-stethoscope"></i> From $5</span></div>
+<div class="sv-info"><span class="sv-no">03 / 08</span><h3>Health Checkups</h3><p>Quick, accurate screening done by trained staff, with no long waits.</p><ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> BP and pulse</li><li><i class="fa-solid fa-circle-check"></i> Oxygen level and BMI</li><li><i class="fa-solid fa-circle-check"></i> Instant results</li></ul><a href="./contact.html" class="btn btn-primary">Book Now <i class="fa-solid fa-arrow-right"></i></a></div></div>
+<div class="sv-panel"><div class="sv-media"><img src="../assets/g34.webp" alt="Diabetes Management" data-fb1="https://loremflickr.com/900/700/glucose,diabetes?lock=14" data-fb2="https://picsum.photos/seed/stackly3/900/700" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="sv-float"><i class="fa-solid fa-droplet"></i> Monthly plans</span></div>
+<div class="sv-info"><span class="sv-no">04 / 08</span><h3>Diabetes Management</h3><p>Everything for sugar control in one place, with ongoing support.</p><ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Glucose testing</li><li><i class="fa-solid fa-circle-check"></i> Strips and insulin supplies</li><li><i class="fa-solid fa-circle-check"></i> Diet guidance</li></ul><a href="./contact.html" class="btn btn-primary">Book Now <i class="fa-solid fa-arrow-right"></i></a></div></div>
+<div class="sv-panel"><div class="sv-media"><img src="../assets/g35.webp" alt="Vaccination" data-fb1="https://loremflickr.com/900/700/vaccine,syringe?lock=15" data-fb2="https://picsum.photos/seed/stackly4/900/700" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="sv-float"><i class="fa-solid fa-syringe"></i> By appointment</span></div>
+<div class="sv-info"><span class="sv-no">05 / 08</span><h3>Vaccination</h3><p>Safe adult and child vaccines given by certified professionals.</p><ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Flu and travel vaccines</li><li><i class="fa-solid fa-circle-check"></i> Child immunisation</li><li><i class="fa-solid fa-circle-check"></i> Records kept for you</li></ul><a href="./contact.html" class="btn btn-primary">Book Now <i class="fa-solid fa-arrow-right"></i></a></div></div>
+<div class="sv-panel"><div class="sv-media"><img src="../assets/g36.webp" alt="Medicine Refills" data-fb1="https://loremflickr.com/900/700/pills,medicine?lock=16" data-fb2="https://picsum.photos/seed/stackly5/900/700" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="sv-float"><i class="fa-solid fa-rotate"></i> Save 10%</span></div>
+<div class="sv-info"><span class="sv-no">06 / 08</span><h3>Medicine Refills</h3><p>Never run out. We remind you before your stock ends.</p><ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Smart reminders</li><li><i class="fa-solid fa-circle-check"></i> One-tap reorder</li><li><i class="fa-solid fa-circle-check"></i> Auto-refill option</li></ul><a href="./contact.html" class="btn btn-primary">Book Now <i class="fa-solid fa-arrow-right"></i></a></div></div>
+<div class="sv-panel"><div class="sv-media"><img src="../assets/g37.webp" alt="Mother &amp; Baby Care" data-fb1="https://loremflickr.com/900/700/mother,baby?lock=17" data-fb2="https://picsum.photos/seed/stackly6/900/700" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="sv-float"><i class="fa-solid fa-baby"></i> Expert support</span></div>
+<div class="sv-info"><span class="sv-no">07 / 08</span><h3>Mother &amp; Baby Care</h3><p>Caring advice and products for mums and little ones.</p><ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Prenatal supplements</li><li><i class="fa-solid fa-circle-check"></i> Newborn essentials</li><li><i class="fa-solid fa-circle-check"></i> Feeding guidance</li></ul><a href="./contact.html" class="btn btn-primary">Book Now <i class="fa-solid fa-arrow-right"></i></a></div></div>
+<div class="sv-panel"><div class="sv-media"><img src="../assets/g38.webp" alt="Skin &amp; Wellness Advice" data-fb1="https://loremflickr.com/900/700/skincare,cream?lock=18" data-fb2="https://picsum.photos/seed/stackly7/900/700" onerror="this.onerror=function(){this.onerror=null;this.src=this.dataset.fb2};this.src=this.dataset.fb1"><span class="sv-float"><i class="fa-solid fa-spa"></i> Personalised</span></div>
+<div class="sv-info"><span class="sv-no">08 / 08</span><h3>Skin &amp; Wellness Advice</h3><p>Pharmacist-led routines built around your skin and lifestyle.</p><ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Skin and hair care</li><li><i class="fa-solid fa-circle-check"></i> Daily wellness plans</li><li><i class="fa-solid fa-circle-check"></i> Product matching</li></ul><a href="./contact.html" class="btn btn-primary">Book Now <i class="fa-solid fa-arrow-right"></i></a></div></div>
+</div></div></section>
+
+<!-- 3. STATS -->
+<section class="stats-sec"><div class="container stats-grid">
+<div class="stat"><span class="cnt" data-to="12" data-suf="k+">0</span><p>Home Deliveries</p></div>
+<div class="stat"><span class="cnt" data-to="8" data-suf="+">0</span><p>Care Services</p></div>
+<div class="stat"><span class="cnt" data-to="15" data-suf="+">0</span><p>Licensed Pharmacists</p></div>
+<div class="stat"><span class="cnt" data-to="99" data-suf="%">0</span><p>Happy Customers</p></div></div></section>
+
+<!-- 4. FEATURE SPLIT -->
+<section class="section split-sec"><div class="container"><div class="split">
+<div class="split-img"><img src="../assets/g39.webp" alt="Pharmacist helping a customer" loading="lazy"><span class="split-tag"><i class="fa-solid fa-shield-heart"></i> Licensed &amp; Trusted</span></div>
+<div class="split-txt"><span class="badge">Why Choose Us</span><h2 class="section-title">Professional Care You Can Rely On</h2>
+<p>Every service is delivered by qualified pharmacists who treat your health with the same care as their own family&rsquo;s.</p>
+<ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Certified, experienced professionals</li><li><i class="fa-solid fa-circle-check"></i> Private, confidential consultations</li><li><i class="fa-solid fa-circle-check"></i> Fast, transparent and affordable</li></ul>
+<a href="./contact.html" class="btn btn-primary">Talk To Us <i class="fa-solid fa-arrow-right"></i></a></div></div></div></section>
+
+<!-- 5. HIGHLIGHTS -->
+<section class="section sv-perks"><div class="container">
+<div class="section-header"><span class="section-subtitle">Our Promise</span><h2 class="section-title">Why Families Love Stackly</h2></div>
+<div class="perk-grid">
+<div class="perk"><i class="fa-solid fa-clock"></i><h4>24-Hour Delivery</h4><p>Most orders reach you within a day.</p></div>
+<div class="perk"><i class="fa-solid fa-certificate"></i><h4>100% Genuine</h4><p>Sourced only from licensed suppliers.</p></div>
+<div class="perk"><i class="fa-solid fa-headset"></i><h4>Friendly Support</h4><p>Real pharmacists, ready to help.</p></div>
+<div class="perk"><i class="fa-solid fa-lock"></i><h4>Secure Payments</h4><p>Safe checkout with every order.</p></div></div></div></section>
+
+<!-- 6. HOW IT WORKS -->
+<section class="section steps-sec"><div class="container">
+<div class="section-header"><span class="section-subtitle">Simple Process</span><h2 class="section-title">Get Care in 4 Easy Steps</h2></div>
+<div class="steps"><span class="steps-line"></span>
+<div class="step"><span class="step-n">1</span><h4>Choose</h4><p>Pick the service that fits your need.</p></div>
+<div class="step"><span class="step-n">2</span><h4>Book</h4><p>Select a convenient date and time.</p></div>
+<div class="step"><span class="step-n">3</span><h4>Meet</h4><p>Visit us or get served at home.</p></div>
+<div class="step"><span class="step-n">4</span><h4>Follow-Up</h4><p>We check in and send reminders.</p></div></div></div></section>
+
+<!-- 7. FAQ -->
+<section class="section faq-sec"><div class="container">
+<div class="section-header"><span class="section-subtitle">Good To Know</span><h2 class="section-title">Service Questions, Answered</h2></div>
+<div class="faq">
+<div class="faq-item"><button class="faq-q" type="button">Do I need an appointment?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Consultations and checkups can be walk-in, but vaccinations are by appointment so we can prepare your dose.</p></div></div>
+<div class="faq-item"><button class="faq-q" type="button">Is home delivery available everywhere?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>We deliver across our service area, free above $30. Contact us to confirm your location.</p></div></div>
+<div class="faq-item"><button class="faq-q" type="button">Are consultations really free?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Yes, pharmacist advice on medicines is always free for our customers.</p></div></div>
+<div class="faq-item"><button class="faq-q" type="button">How do refill reminders work?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Tell us your prescription once and we remind you before it runs out, with one-tap reordering.</p></div></div></div></div></section>
+</main>
+
+<!-- 8. CTA -->
+<section class="cta" id="cta"><div class="container"><div class="cta-inner">
+<span class="cta-badge">We&rsquo;re Here For You</span><h2>Ready To Experience Better Pharmacy Care?</h2>
+<p>Book a service today or talk to our pharmacist &mdash; friendly help is one click away.</p>
+<div class="cta-actions"><a href="./contact.html" class="btn btn-light">Book A Service <i class="fa-solid fa-arrow-right"></i></a><a href="./products.html" class="btn btn-ghost">Shop Medicines</a></div></div></div></section>
+
+<footer class="footer"><div class="container"><div class="footer-top">
+<div class="footer-brand"><a href="../index.html" class="logo footer-logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a><p class="footer-text">Your trusted neighbourhood pharmacy for medicines, wellness and caring advice.</p>
+<div class="social-links"><a href="./404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="./404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="./404.html" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a href="./404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div></div>
+<div class="footer-nav-col"><h4 class="footer-heading">Shop by Category</h4><ul class="footer-links"><li><a href="./404.html">Medicines</a></li><li><a href="./404.html">Vitamins</a></li><li><a href="./404.html">Mother &amp; Baby</a></li><li><a href="./404.html">Health Devices</a></li></ul></div>
+<div class="footer-nav-col"><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="./categories.html">Categories</a></li><li><a href="./medicines.html">Medicines</a></li><li><a href="./services.html">Services</a></li><li><a href="./deals.html">Offers</a></li><li><a href="./contact.html">Contact</a></li></ul></div>
+<div class="footer-nav-col"><h4 class="footer-heading">Visit Us</h4><p class="footer-address">MMR Complex, Periyakollappatty<br>Chinna Thirupathi, Salem,<br>Tamil Nadu 636008<br>Open Mon&ndash;Sat, 8:00 AM &ndash; 9:00 PM</p><p class="footer-address"><a href="./404.html">+91 40 6677 8899</a><br><a href="./404.html">care@stackly.com</a></p></div></div>
+<div class="footer-bottom"><p>&copy; 2026 Stackly Pharmacy. All rights reserved. Always consult a doctor before taking medicines.</p></div></div></footer>
+
+<div class="cart-drawer" id="cartDrawer"><div class="cart-header"><h3>Your Cart (<span id="cartCount">0</span>)</h3><button class="close-cart" id="closeCart">&times;</button></div>
+<div class="cart-items" id="cartItemsContainer"><div class="empty-cart-msg">Your cart is currently empty.</div></div>
+<div class="cart-footer"><div class="cart-total"><span>Total:</span><strong id="cartTotalPrice">$0.00</strong></div><a href="./404.html" class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</a></div></div>
+<div class="modal-overlay" id="quickViewModal"><div class="modal-card quickview-card"><button class="modal-close" id="closeQuickView">&times;</button><div class="quickview-grid"><div class="quickview-img"><img id="qvImage" src="" alt="Product"></div><div class="quickview-info"><span class="badge" id="qvCategory">Category</span><h3 id="qvTitle">Product</h3><p class="qv-price" id="qvPrice">$0.00</p><p class="qv-desc">Quality-checked and sourced from licensed suppliers. Read the label and consult your pharmacist before use.</p><button type="button" class="btn btn-primary btn-block" id="qvAddToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div></div></div></div>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" id="toTopRing"/></svg><i class="fa-solid fa-arrow-up"></i></button>
+<div class="cursor-glow" id="cursorGlow"></div><div class="toast" id="toast">Item added to cart!</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../js/script.js"></script><script src="../js/services.js"></script>
+</body></html>

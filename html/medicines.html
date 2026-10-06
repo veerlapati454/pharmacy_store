@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicines - Stackly Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/categories.css"><!-- shared page-hero, chips, split, FAQ styles -->
+  <style>/* MEDICINES PAGE STYLES (also saved as css/products.css) */
+/* MEDICINES PAGE */
+.sort-bar{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:30px;font-weight:700}
+.sort-bar select{padding:10px 18px;border-radius:50px;border:2px solid var(--border-color);font:inherit;background:#fff;color:var(--text-dark);outline:none;cursor:pointer}
+.sort-bar select:focus{border-color:var(--primary)}
+.product-card[hidden]{display:none}
+.rx-sec{background:#fff}
+.deals.section{padding-top:40px}
+.rv3{grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))}
+@media(max-width:768px){.sort-bar{flex-direction:column;gap:8px}}
+
+/* BRANDS MARQUEE + NUMBERS */
+.brands-sec{background:linear-gradient(180deg,var(--bg-light),#fff);overflow:hidden}
+.brand-rows{display:flex;flex-direction:column;gap:16px;margin:0 0 44px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.brand-row{overflow:hidden;white-space:nowrap}
+.brand-track{display:inline-flex;gap:16px;padding-left:16px;animation:brandL 32s linear infinite}
+.brand-row.rev .brand-track{animation-name:brandR;animation-duration:38s}
+.brand-row:hover .brand-track{animation-play-state:paused}
+.brand{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:50px;background:#fff;border:1px solid var(--border-color);box-shadow:var(--shadow-sm);font-weight:800;color:var(--secondary);transition:var(--transition)}
+.brand i{color:var(--primary);font-size:1.1rem}
+.brand:hover{background:var(--primary);color:#fff;transform:scale(1.06)}.brand:hover i{color:#fff}
+@keyframes brandL{to{transform:translateX(-50%)}}
+@keyframes brandR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.brand-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,45%),1fr));gap:24px;padding:40px 24px;border-radius:var(--radius-lg);background:linear-gradient(120deg,#0A2E2B,#0E9F8E);color:#fff;text-align:center;box-shadow:var(--shadow-lg)}
+@media(prefers-reduced-motion:reduce){.brand-track{animation:none}}
+@media(max-width:768px){.brand{padding:11px 20px;font-size:.9rem}.brand-stats{padding:30px 16px}}
+</style>
+  <script>if("scrollRestoration" in history)history.scrollRestoration="manual";</script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./categories.html" class="nav-link">Categories</a></li>
+          <li><a href="./medicines.html" class="nav-link active">Medicines</a></li>
+          <li><a href="./services.html" class="nav-link">Services</a></li>
+          <li><a href="./deals.html" class="nav-link">Offers</a></li>
+          <li><a href="./contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="View Cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+        <a href="./login.html" class="btn btn-login" id="loginBtn"><i class="fa-regular fa-user"></i> <span>Login</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+      <button class="close-drawer" id="closeDrawer">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="./categories.html" class="mobile-nav-link">Categories</a></li>
+      <li><a href="./medicines.html" class="mobile-nav-link active">Medicines</a></li>
+      <li><a href="./services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="./deals.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="./contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer"><a href="./login.html" class="btn btn-primary btn-block" id="mobileLoginBtn">Login / Register</a></div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <main>
+    <!-- 1. HERO -->
+    <section class="page-hero">
+      <i class="fa-solid fa-pills float-ic f1"></i><i class="fa-solid fa-capsules float-ic f2"></i><i class="fa-solid fa-plus float-ic f3"></i><i class="fa-solid fa-heart-pulse float-ic f4"></i>
+      <div class="container ph-inner">
+        <nav class="crumbs"><a href="../index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Medicines</span></nav>
+        <span class="badge">Genuine &amp; Pharmacist Verified</span>
+        <h1 class="ph-title">Find The Right Medicine, Delivered Fast</h1>
+        <p class="ph-sub">Trusted brands for pain relief, cold &amp; flu, vitamins, digestion and diabetes care &mdash; with expert advice one tap away.</p>
+        <div class="cat-search"><i class="fa-solid fa-magnifying-glass"></i><input type="search" id="prodSearch" placeholder="Search medicines, e.g. paracetamol" aria-label="Search medicines"></div>
+      </div>
+    </section>
+
+    <!-- 2. SHOP -->
+    <section class="section cat-sec" id="shop">
+      <div class="container">
+        <div class="section-header"><span class="section-subtitle">Shop Medicines</span><h2 class="section-title">Our Bestselling Medicines</h2><p class="section-desc">Filter by need and sort by price or popularity.</p></div>
+        <div class="chips" id="chips"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="pain">Pain Relief</button><button class="chip" data-filter="cold">Cold &amp; Flu</button><button class="chip" data-filter="vitamins">Vitamins</button><button class="chip" data-filter="digestion">Digestion</button><button class="chip" data-filter="diabetes">Diabetes</button></div>
+        <div class="sort-bar"><label for="sortSel">Sort by</label><select id="sortSel"><option value="pop">Most Popular</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select></div>
+        <div class="products-grid" id="prodGrid">
+          <div class="product-card" data-id="m1" data-title="Paracetamol 500mg Tablets" data-price="4" data-category="Pain Relief" data-image="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80" data-group="pain" data-pop="212">
+            <div class="product-img-box"><span class="product-tag">Best Seller</span><img src="../assets/g21.webp" alt="Paracetamol 500mg Tablets" loading="lazy"><div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content"><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(212)</span></div><h3 class="product-title">Paracetamol 500mg Tablets</h3><p class="product-price">$4.00</p><button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="m2" data-title="Cough & Cold Relief Syrup" data-price="9" data-category="Cold & Flu" data-image="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=800&q=80" data-group="cold" data-pop="148">
+            <div class="product-img-box"><span class="product-tag hot">Hot</span><img src="../assets/g22.webp" alt="Cough & Cold Relief Syrup" loading="lazy"><div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content"><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span>(148)</span></div><h3 class="product-title">Cough & Cold Relief Syrup</h3><p class="product-price">$9.00</p><button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="m3" data-title="Vitamin C 1000mg Effervescent" data-price="12" data-category="Vitamins" data-image="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80" data-group="vitamins" data-pop="264">
+            <div class="product-img-box"><img src="../assets/g23.webp" alt="Vitamin C 1000mg Effervescent" loading="lazy"><div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content"><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(264)</span></div><h3 class="product-title">Vitamin C 1000mg Effervescent</h3><p class="product-price">$12.00 <span class="old-price">$15.00</span></p><button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="m4" data-title="Digestive Enzyme Capsules" data-price="15" data-category="Digestion" data-image="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=800&q=80" data-group="digestion" data-pop="96">
+            <div class="product-img-box"><img src="../assets/g24.webp" alt="Digestive Enzyme Capsules" loading="lazy"><div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content"><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span>(96)</span></div><h3 class="product-title">Digestive Enzyme Capsules</h3><p class="product-price">$15.00</p><button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="m5" data-title="Glucose Test Strips (50)" data-price="22" data-category="Diabetes" data-image="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=800&q=80" data-group="diabetes" data-pop="131">
+            <div class="product-img-box"><span class="product-tag">Sale</span><img src="../assets/g25.webp" alt="Glucose Test Strips (50)" loading="lazy"><div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content"><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(131)</span></div><h3 class="product-title">Glucose Test Strips (50)</h3><p class="product-price">$22.00 <span class="old-price">$27.00</span></p><button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="m6" data-title="Ibuprofen 400mg Tablets" data-price="6" data-category="Pain Relief" data-image="https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=800&q=80" data-group="pain" data-pop="178">
+            <div class="product-img-box"><img src="../assets/g26.webp" alt="Ibuprofen 400mg Tablets" loading="lazy"><div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content"><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span>(178)</span></div><h3 class="product-title">Ibuprofen 400mg Tablets</h3><p class="product-price">$6.00</p><button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="m7" data-title="Omega-3 Fish Oil Capsules" data-price="19" data-category="Vitamins" data-image="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=800&q=80" data-group="vitamins" data-pop="203">
+            <div class="product-img-box"><img src="../assets/g27.webp" alt="Omega-3 Fish Oil Capsules" loading="lazy"><div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content"><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(203)</span></div><h3 class="product-title">Omega-3 Fish Oil Capsules</h3><p class="product-price">$19.00</p><button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+          <div class="product-card" data-id="m8" data-title="Antacid Chewable Tablets" data-price="5" data-category="Digestion" data-image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" data-group="digestion" data-pop="87">
+            <div class="product-img-box"><img src="../assets/g28.webp" alt="Antacid Chewable Tablets" loading="lazy"><div class="product-actions"><button class="action-btn quick-view" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button><button class="action-btn add-favorite" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button></div></div>
+            <div class="product-content"><div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(87)</span></div><h3 class="product-title">Antacid Chewable Tablets</h3><p class="product-price">$5.00</p><button type="button" class="btn btn-primary btn-block add-to-cart-btn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+          </div>
+        </div>
+        <p class="cat-empty" id="prodEmpty" hidden>No medicine found &mdash; try another word.</p>
+      </div>
+    </section>
+
+    <!-- 3. PRESCRIPTION -->
+    <section class="section rx-sec">
+      <div class="container">
+        <div class="split">
+          <div class="split-img"><img src="../assets/g29.webp" alt="Pharmacist checking a prescription" loading="lazy"><span class="split-tag"><i class="fa-solid fa-file-prescription"></i> Prescription Verified</span></div>
+          <div class="split-txt">
+            <span class="badge">Prescription Orders</span>
+            <h2 class="section-title">Have A Prescription? Upload It In Seconds</h2>
+            <p>Snap a photo, we verify it with a licensed pharmacist and deliver your medicines safely to your door.</p>
+            <ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Checked by licensed pharmacists</li><li><i class="fa-solid fa-circle-check"></i> Private and secure upload</li><li><i class="fa-solid fa-circle-check"></i> Refill reminders included</li></ul>
+            <a href="./404.html" class="btn btn-primary"><i class="fa-solid fa-file-arrow-up"></i> Upload Prescription</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BRANDS + NUMBERS -->
+    <section class="section brands-sec">
+      <div class="container">
+        <div class="section-header"><span class="section-subtitle">Trusted Brands</span><h2 class="section-title">Only Brands We Trust</h2><p class="section-desc">Every product comes from licensed manufacturers and distributors.</p></div>
+      </div>
+      <div class="brand-rows" aria-hidden="true">
+        <div class="brand-row"><div class="brand-track"><span class="brand"><i class="fa-solid fa-shield-heart"></i>PharmaCore</span><span class="brand"><i class="fa-solid fa-leaf"></i>NutriLife</span><span class="brand"><i class="fa-solid fa-hand-holding-medical"></i>HealWell</span><span class="brand"><i class="fa-solid fa-plus"></i>CuraPlus</span><span class="brand"><i class="fa-solid fa-seedling"></i>VitaBloom</span><span class="brand"><i class="fa-solid fa-user-shield"></i>MediTrust</span><span class="brand"><i class="fa-solid fa-dna"></i>BioGuard</span><span class="brand"><i class="fa-solid fa-spa"></i>ZenHealth</span><span class="brand"><i class="fa-solid fa-shield-heart"></i>PharmaCore</span><span class="brand"><i class="fa-solid fa-leaf"></i>NutriLife</span><span class="brand"><i class="fa-solid fa-hand-holding-medical"></i>HealWell</span><span class="brand"><i class="fa-solid fa-plus"></i>CuraPlus</span><span class="brand"><i class="fa-solid fa-seedling"></i>VitaBloom</span><span class="brand"><i class="fa-solid fa-user-shield"></i>MediTrust</span><span class="brand"><i class="fa-solid fa-dna"></i>BioGuard</span><span class="brand"><i class="fa-solid fa-spa"></i>ZenHealth</span></div></div>
+        <div class="brand-row rev"><div class="brand-track"><span class="brand"><i class="fa-solid fa-seedling"></i>VitaBloom</span><span class="brand"><i class="fa-solid fa-user-shield"></i>MediTrust</span><span class="brand"><i class="fa-solid fa-dna"></i>BioGuard</span><span class="brand"><i class="fa-solid fa-spa"></i>ZenHealth</span><span class="brand"><i class="fa-solid fa-shield-heart"></i>PharmaCore</span><span class="brand"><i class="fa-solid fa-leaf"></i>NutriLife</span><span class="brand"><i class="fa-solid fa-hand-holding-medical"></i>HealWell</span><span class="brand"><i class="fa-solid fa-plus"></i>CuraPlus</span><span class="brand"><i class="fa-solid fa-seedling"></i>VitaBloom</span><span class="brand"><i class="fa-solid fa-user-shield"></i>MediTrust</span><span class="brand"><i class="fa-solid fa-dna"></i>BioGuard</span><span class="brand"><i class="fa-solid fa-spa"></i>ZenHealth</span><span class="brand"><i class="fa-solid fa-shield-heart"></i>PharmaCore</span><span class="brand"><i class="fa-solid fa-leaf"></i>NutriLife</span><span class="brand"><i class="fa-solid fa-hand-holding-medical"></i>HealWell</span><span class="brand"><i class="fa-solid fa-plus"></i>CuraPlus</span></div></div>
+      </div>
+      <div class="container">
+        <div class="brand-stats">
+          <div class="stat"><span class="cnt" data-to="200" data-suf="+">0</span><p>Trusted Brands</p></div>
+          <div class="stat"><span class="cnt" data-to="50" data-suf="k+">0</span><p>Products</p></div>
+          <div class="stat"><span class="cnt" data-to="12" data-suf="k+">0</span><p>Prescriptions Filled</p></div>
+          <div class="stat"><span class="cnt" data-to="99" data-suf="%">0</span><p>Happy Customers</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. DEAL -->
+    <section class="section deals" id="deals">
+      <div class="container">
+        <div class="deals-wrapper">
+          <div class="deals-content">
+            <span class="badge">Limited Offer</span>
+            <h2>Wellness Week Special</h2>
+            <h3>Up to 35% Off Vitamins &amp; Supplements</h3>
+            <p>Stock up on daily essentials and immunity boosters while the offer lasts.</p>
+            <div class="countdown"><div class="time-unit"><span id="days">02</span><p>Days</p></div><div class="time-unit"><span id="hours">14</span><p>Hours</p></div><div class="time-unit"><span id="minutes">38</span><p>Mins</p></div><div class="time-unit"><span id="seconds">45</span><p>Secs</p></div></div>
+            <a href="./deals.html" class="btn btn-primary">See All Offers</a>
+          </div>
+          <div class="deals-img-box"><img src="../assets/g30.webp" alt="Vitamins and supplements" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. REVIEWS -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section-header"><span class="section-subtitle">Customer Love</span><h2 class="section-title">What Our Customers Say</h2></div>
+        <div class="reviews-grid rv3"><div class="review-summary"><span class="rating-score">4.9<small>/5</small></span><div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p>From 5,000+ verified customers</p></div><div class="review-card"><div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"Everything arrives sealed and on time. Pharmacist advice on dosage was clear and kind."</p><div class="reviewer"><span class="avatar">SJ</span><div><h5>Sarah Jenkins</h5><span>Regular Customer</span></div></div></div><div class="review-card"><div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"Uploading my father's prescription took a minute. Genuine products at fair prices."</p><div class="reviewer"><span class="avatar">DM</span><div><h5>David Miller</h5><span>Caregiver</span></div></div></div><div class="review-card"><div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"The filters make it easy to find the right syrup fast. Delivery next morning, perfect."</p><div class="reviewer"><span class="avatar">AR</span><div><h5>Anita Rao</h5><span>Working Mother</span></div></div></div></div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section faq-sec">
+      <div class="container">
+        <div class="section-header"><span class="section-subtitle">Good To Know</span><h2 class="section-title">Medicine FAQs</h2></div>
+        <div class="faq"><div class="faq-item"><button class="faq-q" type="button">Do I need a prescription for these medicines?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Over-the-counter items can be ordered directly. Prescription medicines need a valid prescription, which you can upload online.</p></div></div><div class="faq-item"><button class="faq-q" type="button">Are the medicines genuine and in date?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Yes. We source only from licensed distributors, and every batch is checked for authenticity and expiry before dispatch.</p></div></div><div class="faq-item"><button class="faq-q" type="button">Can I talk to a pharmacist before buying?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Absolutely. Our pharmacists are available by call or chat to guide dosage, interactions and alternatives.</p></div></div><div class="faq-item"><button class="faq-q" type="button">What is your delivery and return policy?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Most orders arrive within 24 hours. Sealed, unopened items can be returned within 7 days.</p></div></div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. CTA -->
+  <section class="cta" id="cta">
+    <div class="container"><div class="cta-inner">
+      <span class="cta-badge">Need Advice?</span>
+      <h2>Unsure Which Medicine Is Right? Ask A Pharmacist</h2>
+      <p>Get free, friendly guidance on dosage, side effects and safe alternatives.</p>
+      <div class="cta-actions"><a href="./contact.html" class="btn btn-light">Talk to a Pharmacist <i class="fa-solid fa-arrow-right"></i></a><a href="./categories.html" class="btn btn-ghost">Browse Categories</a></div>
+    </div></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo footer-logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+          <p class="footer-text">Your trusted neighbourhood pharmacy for medicines, wellness and caring advice.</p>
+          <div class="social-links">
+            <a href="./404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="./404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="./404.html" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="./404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Shop by Category</h4>
+          <ul class="footer-links">
+            <li><a href="./404.html">Medicines</a></li><li><a href="./404.html">Vitamins</a></li>
+            <li><a href="./404.html">Mother &amp; Baby</a></li><li><a href="./404.html">Health Devices</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li><li><a href="./categories.html">Categories</a></li>
+            <li><a href="./medicines.html">Medicines</a></li><li><a href="./services.html">Services</a></li>
+            <li><a href="./deals.html">Offers</a></li><li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <p class="footer-address">MMR Complex, Periyakollappatty<br>Chinna Thirupathi, Salem,<br>Tamil Nadu 636008<br>Open Mon&ndash;Sat, 8:00 AM &ndash; 9:00 PM</p>
+          <p class="footer-address"><a href="./404.html">+91 40 6677 8899</a><br><a href="./404.html">care@stackly.com</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Stackly Pharmacy. All rights reserved. Always consult a doctor before taking medicines.</p></div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header"><h3>Your Cart (<span id="cartCount">0</span>)</h3><button class="close-cart" id="closeCart">&times;</button></div>
+    <div class="cart-items" id="cartItemsContainer"><div class="empty-cart-msg">Your cart is currently empty.</div></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total:</span><strong id="cartTotalPrice">$0.00</strong></div>
+      <a href="./404.html" class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card quickview-card">
+      <button class="modal-close" id="closeQuickView">&times;</button>
+      <div class="quickview-grid">
+        <div class="quickview-img"><img id="qvImage" src="" alt="Product"></div>
+        <div class="quickview-info">
+          <span class="badge" id="qvCategory">Category</span>
+          <h3 id="qvTitle">Product</h3>
+          <p class="qv-price" id="qvPrice">$0.00</p>
+          <p class="qv-desc">Quality-checked and sourced from licensed suppliers. Read the label and consult your pharmacist before use.</p>
+          <button type="button" class="btn btn-primary btn-block" id="qvAddToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" id="toTopRing"/></svg><i class="fa-solid fa-arrow-up"></i></button>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="toast" id="toast">Item added to cart!</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/products.js"></script>
+</body>
+</html>

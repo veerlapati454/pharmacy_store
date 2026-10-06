@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Stackly Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <div class="lg">
+
+    <!-- BRAND PANEL -->
+    <aside class="lg-brand" id="brandPanel">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="floats" aria-hidden="true">
+        <i class="fl f1 fa-solid fa-pills" data-depth="20"></i>
+        <i class="fl f2 fa-solid fa-capsules" data-depth="30"></i>
+        <i class="fl f3 fa-solid fa-syringe" data-depth="15"></i>
+        <i class="fl f4 fa-solid fa-stethoscope" data-depth="25"></i>
+        <i class="fl f5 fa-solid fa-heart-pulse" data-depth="18"></i>
+        <i class="fl f6 fa-solid fa-tablets" data-depth="22"></i>
+      </div>
+      <div class="orb" aria-hidden="true"><span class="ring"></span><span class="ring r2"></span><i class="fa-solid fa-plus"></i></div>
+
+      <a href="../index.html" class="lg-logo" aria-label="Stackly home"><img src="../assets/stackly_logo.webp" alt="Stackly"></a>
+
+      <div class="lg-brand-body">
+        <span class="tag"><i class="fa-solid fa-prescription-bottle-medical"></i> Stackly Pharmacy</span>
+        <h1>
+          <span class="ln"><span>Welcome back,</span></span>
+          <span class="ln"><span>your health is our care.</span></span>
+        </h1>
+        <p>Sign in to track orders, reorder your medicines in one tap and get exclusive member offers.</p>
+        <ul class="perks">
+          <li><i class="fa-solid fa-truck-fast"></i> Free delivery on orders over $30</li>
+          <li><i class="fa-solid fa-shield-halved"></i> 100% genuine, licensed medicines</li>
+          <li><i class="fa-solid fa-user-doctor"></i> Free advice from real pharmacists</li>
+        </ul>
+      </div>
+
+      <div class="lg-foot">
+        <div class="lg-stats">
+          <div><b class="cnt" data-to="50" data-suf="k+">0</b><span>Products</span></div>
+          <div><b class="cnt" data-to="12" data-suf="k+">0</b><span>Prescriptions filled</span></div>
+          <div><b class="cnt" data-to="24" data-suf="h">0</b><span>Fast delivery</span></div>
+        </div>
+        <svg class="ecg" viewBox="0 0 800 60" preserveAspectRatio="none" aria-hidden="true"><path id="ecgPath" d="M0 30 H220 L240 30 L258 6 L282 54 L302 18 L316 30 H520 L540 30 L558 10 L580 50 L598 22 L610 30 H800"/></svg>
+      </div>
+    </aside>
+
+    <!-- FORM -->
+    <main class="lg-form-wrap">
+      <div class="lg-card">
+        <a href="../index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+        <div class="head">
+          <span class="eyebrow" id="eyebrow">Secure sign in</span>
+          <h2>Log in</h2>
+          <p class="sub">Enter your details to access your Stackly account.</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <fieldset class="role">
+            <legend>Sign in as</legend>
+            <div class="seg">
+              <span class="thumb" aria-hidden="true"></span>
+              <label><input type="radio" name="role" value="user" checked><span><i class="fa-regular fa-user"></i> Customer</span></label>
+              <label><input type="radio" name="role" value="admin"><span><i class="fa-solid fa-user-shield"></i> Admin</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <i class="lead fa-regular fa-envelope"></i>
+            <input type="email" id="email" placeholder=" " autocomplete="email" maxlength="60" required>
+            <label for="email">Email address</label>
+            <small class="hint" data-for="email">e.g. name@example.com</small>
+          </div>
+
+          <div class="field">
+            <i class="lead fa-solid fa-lock"></i>
+            <input type="password" id="password" placeholder=" " autocomplete="current-password" maxlength="40" required>
+            <label for="password">Password</label>
+            <button type="button" class="eye" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+            <small class="hint" data-for="password">At least 6 characters</small>
+            <small class="caps" id="capsWarn" hidden><i class="fa-solid fa-triangle-exclamation"></i> Caps Lock is on</small>
+          </div>
+
+          <div class="row">
+            <label class="remember"><input type="checkbox" id="rememberMe"> Remember me</label>
+            <a href="./404.html" class="forgot">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn" id="loginBtn">
+            <span class="lbl">Log In <i class="fa-solid fa-arrow-right"></i></span>
+            <span class="spin" aria-hidden="true"></span>
+            <span class="done"><i class="fa-solid fa-check"></i> Welcome back!</span>
+          </button>
+        </form>
+
+        <p class="signup">New to Stackly? <a href="./signup.html">Create an account</a></p>
+        <div class="secure"><i class="fa-solid fa-lock"></i> Your health information is encrypted and secure</div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

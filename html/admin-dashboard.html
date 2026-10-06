@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A2E2B">
+<title>Admin Panel | Stackly Pharmacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--p:#0E9F8E;--p2:#0A7F72;--ink:#0A2E2B;--ink2:#0F4A44;--acc:#FFB547;--bg:#F1FBF8;--line:#D5EBE5;--mut:#5E7B76;--ok:#2fae66;--bad:#e5484d;--fh:'DM Serif Display',serif;--fb:'Nunito Sans',system-ui,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--sw:256px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{max-width:100%;overflow-x:clip}
+body{font-family:var(--fb);background:var(--bg);color:#12332F;-webkit-font-smoothing:antialiased}
+button,select,input{font:inherit;color:inherit}button{background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}ul{list-style:none}img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.app{display:flex;min-height:100vh}
+.side{position:fixed;inset:0 auto 0 0;width:min(var(--sw),86vw);z-index:50;display:flex;flex-direction:column;padding:20px 14px;color:#fff;overflow-y:auto;background:radial-gradient(circle at 10% 0,rgba(14,159,142,.5),transparent 50%),linear-gradient(170deg,var(--ink2),var(--ink))}
+.brand{display:flex;justify-content:center;margin-bottom:14px}.brand img{height:56px;width:auto}
+.x{display:none;position:absolute;top:35px;right:14px;width:36px;height:36px;place-items:center;border-radius:50%;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22)}
+.grp{font-size:.68rem;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.45);margin:14px 10px 6px;font-weight:800}
+.nav{display:grid;gap:3px}
+.nav>*{display:flex;align-items:center;gap:12px;width:100%;padding:11px 12px;border-radius:10px;font-size:.9rem;font-weight:700;color:rgba(255,255,255,.78);text-align:left;transition:.2s}
+.nav i{width:18px;text-align:center}
+.nav>*:hover{background:rgba(255,255,255,.09);color:#fff;transform:translateX(3px)}
+.nav .on{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;box-shadow:0 8px 18px -8px rgba(14,159,142,.9)}
+.nav .n{margin-left:auto;font-size:.68rem;padding:1px 8px;border-radius:99px;background:var(--acc);color:var(--ink);font-weight:800}
+.su{display:flex;align-items:center;gap:10px;margin-top:auto;padding:10px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
+.su div{min-width:0}.su b{display:block;font-size:.85rem;text-transform:capitalize}
+.su small{display:block;font-size:.7rem;opacity:.65;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.av{flex:0 0 auto;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--fh);text-transform:uppercase;background:var(--acc);color:var(--ink)}
+.lo{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:8px;padding:10px;border-radius:10px;font-size:.8rem;font-weight:800;color:#ff9a9d;background:rgba(229,72,77,.13);border:1px solid rgba(229,72,77,.3)}
+.ov{position:fixed;inset:0;z-index:40;background:rgba(5,25,23,.65);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:.25s}.ov.show{opacity:1;visibility:visible}
+.main{flex:1;min-width:0;margin-left:var(--sw)}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;padding:12px 28px;min-height:64px;background:rgba(241,251,248,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top h1{font-family:var(--fh);font-weight:400;font-size:1.7rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.burger{display:none;width:42px;height:42px;border-radius:10px;place-items:center;color:#fff;background:linear-gradient(135deg,var(--p),var(--p2))}
+.tr{margin-left:auto;display:flex;align-items:center;gap:10px}
+.badge{padding:6px 14px;border-radius:99px;font-size:.78rem;font-weight:800;color:var(--ink);background:var(--acc)}
+.content{padding:24px 28px 56px;max-width:1360px;margin:0 auto}
+.hero{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:30px;margin-bottom:20px;border-radius:18px;color:#fff;background:radial-gradient(circle at 12% 0,rgba(14,159,142,.65),transparent 55%),radial-gradient(circle at 95% 100%,rgba(255,181,71,.22),transparent 45%),linear-gradient(135deg,var(--ink2),var(--ink))}
+.hero h2{font-family:var(--fh);font-weight:400;font-size:2.2rem;line-height:1.1;margin-bottom:8px}
+.hero p{max-width:520px;opacity:.82;line-height:1.6;font-size:.95rem}
+.eb{font-size:.72rem;letter-spacing:1.6px;text-transform:uppercase;font-weight:800;color:var(--acc);margin-bottom:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 18px;border-radius:10px;font-weight:800;font-size:.88rem;border:1.5px solid var(--p);background:var(--p);color:#fff;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.amb{background:var(--acc);border-color:var(--acc);color:var(--ink)}
+.btn.gh{background:transparent;color:var(--p)}.btn.sm{padding:6px 12px;font-size:.8rem}
+.btn.red{background:var(--bad);border-color:var(--bad)}.btn.rg{background:transparent;color:var(--bad);border-color:var(--bad)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:20px}
+.stat{padding:20px 16px;border-radius:14px;background:#fff;border:1px solid var(--line);text-align:center}
+.stat i{width:44px;height:44px;display:grid;place-items:center;margin:0 auto 12px;border-radius:12px;color:var(--p);background:rgba(14,159,142,.1)}
+.stat.w i{color:#c0353a;background:rgba(229,72,77,.12)}
+.stat b{display:block;font-family:var(--fh);font-weight:400;font-size:2rem;line-height:1}
+.stat small{display:block;margin-top:4px;font-size:.78rem;color:var(--mut);font-weight:700}
+.g2{display:grid;grid-template-columns:1.7fr 1fr;gap:16px;margin-bottom:16px;align-items:start}.g2>*{min-width:0}
+.card{padding:22px;margin-bottom:16px;border-radius:14px;background:#fff;border:1px solid var(--line);min-width:0}.g2 .card{margin-bottom:0}
+.ch{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.ch h3{font-family:var(--fh);font-weight:400;font-size:1.35rem}.ch p{font-size:.8rem;color:var(--mut);margin-top:2px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:560px}
+th{text-align:left;padding:0 10px 10px;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--mut);border-bottom:1px solid var(--line)}
+td{padding:12px 10px;border-bottom:1px solid var(--line);font-size:.86rem}tr:last-child td{border-bottom:0}
+tbody tr:hover{background:rgba(14,159,142,.06)}
+.t2{font-size:.75rem;color:var(--mut);margin-top:2px}
+.tag{display:inline-block;padding:3px 10px;border-radius:99px;font-size:.72rem;font-weight:800;white-space:nowrap}
+.s-processing,.s-review,.s-low{background:rgba(255,181,71,.28);color:#8a5a06}.s-shipped,.s-active{background:rgba(14,159,142,.15);color:var(--p2)}.s-delivered,.s-ok{background:rgba(47,174,102,.16);color:#1f8a4f}.s-out,.s-rejected{background:rgba(229,72,77,.14);color:#c0353a}
+select,.srch{padding:7px 10px;border-radius:8px;border:1.5px solid var(--line);background:#fff;font-size:.82rem;font-weight:700}
+.srch{min-width:200px}
+.chart{display:flex;align-items:flex-end;gap:12px;height:190px;padding-top:10px}
+.chart div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:6px;font-size:.74rem;font-weight:700;color:var(--mut)}
+.chart i{display:block;width:100%;max-width:46px;height:0;border-radius:8px 8px 0 0;background:linear-gradient(180deg,var(--p),var(--p2));transition:height .9s var(--ease)}
+.chart .hi i{background:linear-gradient(180deg,var(--acc),#e89a2c)}
+.lst li{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line)}.lst li:last-child{border-bottom:0}
+.lst b{display:block;font-size:.88rem}.lst small{font-size:.76rem;color:var(--mut)}.lst .r{margin-left:auto;display:flex;gap:6px;align-items:center}
+.pbar{height:7px;width:90px;border-radius:99px;background:#DCEFEA;overflow:hidden}.pbar i{display:block;height:100%;border-radius:99px;background:var(--p)}.pbar.l i{background:var(--bad)}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:16px}
+.rx{padding:18px;border-radius:14px;background:#fff;border:1px solid var(--line);text-align:center}
+.rx .ic{width:50px;height:50px;margin:0 auto 10px;display:grid;place-items:center;border-radius:14px;color:#fff;font-size:1.2rem;background:linear-gradient(135deg,var(--p),var(--p2))}
+.rx h4{font-size:.98rem}.rx p{font-size:.8rem;color:var(--mut);margin:2px 0 10px}.rx .row{display:flex;gap:8px;margin-top:12px}.rx .row .btn{flex:1}
+.sr{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}.sr:last-child{border-bottom:0}
+.sr b{display:block;font-size:.92rem}.sr small{color:var(--mut);font-size:.8rem}
+.sw{position:relative;width:44px;height:24px;border-radius:99px;background:#CFE3DE;transition:.3s;flex:0 0 auto}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.3s var(--ease)}
+.sw.on{background:var(--p)}.sw.on::after{transform:translateX(20px)}
+.prof{display:flex;align-items:center;flex-direction:column;gap:6px;text-align:center}.prof .av{width:72px;height:72px;font-size:2rem;background:var(--p);color:#fff}
+.empty{text-align:center;color:var(--mut);padding:24px}
+.toast{position:fixed;left:50%;bottom:24px;z-index:100;max-width:calc(100vw - 32px);text-align:center;transform:translate(-50%,20px);padding:12px 20px;border-radius:10px;background:var(--ink);color:#fff;font-size:.86rem;opacity:0;pointer-events:none;transition:.3s var(--ease)}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1100px){.g2{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:1024px){
+ .side{transform:translateX(-100%);transition:transform .35s var(--ease);width:min(300px,84vw);border-radius:0 24px 24px 0;box-shadow:24px 0 60px -20px rgba(0,0,0,.65)}
+ .side.open{transform:none}.main{margin-left:0}.x,.burger{display:grid}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:720px){.content{padding:18px 16px 44px}.top{padding:10px 14px}.hero{padding:24px 20px}.hero h2{font-size:1.8rem}.top h1{font-size:1.35rem}.badge{display:none}}
+@media(max-width:480px){.stats{grid-template-columns:minmax(0,1fr)}.card{padding:16px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="ov" id="ov"></div>
+  <aside class="side" id="side">
+    <button class="x" id="closeSide" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <a href="../index.html" class="brand"><img src="../assets/stackly_logo.webp" alt="Stackly"></a>
+    <p class="grp">Administration</p><nav class="nav" id="navMain"></nav>
+    <div class="su"><span class="av" id="sAv">A</span><div><b id="sName">Admin</b><small id="sMail">&mdash;</small></div></div>
+    <button class="lo" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+  </aside>
+  <main class="main">
+    <header class="top">
+      <button class="burger" id="burger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+      <h1 id="title">Overview</h1>
+      <div class="tr"><span class="badge"><i class="fa-solid fa-shield-halved"></i> Admin</span><span class="av" id="tAv">A</span></div>
+    </header>
+    <div class="content" id="content"></div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function () {
+  'use strict';
+  /* ---- Session guard (saved by login.js) ---- */
+  var user = null;
+  try { if (localStorage.getItem('isAuthenticated') === 'true') user = JSON.parse(localStorage.getItem('user') || 'null'); } catch (e) {}
+  if (!user || !user.email) { location.replace('./login.html'); return; }
+  if (user.role !== 'admin') { location.replace('./user-dashboard.html'); return; }
+
+  var email = user.email, name = email.split('@')[0].replace(/[^a-zA-Z]/g, ' ').trim() || 'Admin', ini = name.charAt(0).toUpperCase();
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var usd = function (n) { return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+  var tt;
+  function toast(m) { var t = $('toast'); t.textContent = m; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(function () { t.classList.remove('show'); }, 2400); }
+  function logout() { ['user', 'isAuthenticated', 'stacklyAdminNav'].forEach(function (k) { localStorage.removeItem(k); }); location.href = './login.html'; }
+  var h = new Date().getHours(), greet = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+
+  /* ---- Sample data (replace with real data from your backend) ---- */
+  var orders = [
+    { id: 'STK-3041', c: 'Priya Sharma', item: 'Vitamin D3 + Omega-3 Combo', amt: 38.5, st: 'shipped' },
+    { id: 'STK-3040', c: 'Arjun Reddy', item: 'Amlodipine 5mg x 30', amt: 9.8, st: 'processing' },
+    { id: 'STK-3039', c: 'Meera Nair', item: 'Baby Care Essentials Kit', amt: 56.9, st: 'processing' },
+    { id: 'STK-3036', c: 'Kiran Rao', item: 'Digital BP Monitor', amt: 42, st: 'processing' },
+    { id: 'STK-3019', c: 'Sana Khan', item: 'Metformin 500mg x 60', amt: 14.2, st: 'delivered' },
+    { id: 'STK-2987', c: 'Rahul Verma', item: 'Herbal Immunity Tonic', amt: 9.9, st: 'delivered' }
+  ];
+  var stock = [
+    { s: 'MED-101', n: 'Metformin 500mg', q: 220, min: 80 },
+    { s: 'MED-114', n: 'Amlodipine 5mg', q: 34, min: 60 },
+    { s: 'VIT-207', n: 'Vitamin D3 60K', q: 12, min: 40 },
+    { s: 'DEV-310', n: 'Digital BP Monitor', q: 0, min: 10 },
+    { s: 'WEL-420', n: 'Daily Multivitamin (60)', q: 148, min: 50 },
+    { s: 'DEV-322', n: 'Digital Glucometer Kit', q: 9, min: 15 }
+  ];
+  var rxq = [
+    { c: 'Arjun Reddy', m: 'Amlodipine 5mg', dr: 'Dr. Anitha Rao', up: '12 min ago' },
+    { c: 'Sana Khan', m: 'Metformin 500mg', dr: 'Dr. Ramesh Kumar', up: '1h ago' },
+    { c: 'Lakshmi Devi', m: 'Atorvastatin 10mg', dr: 'Dr. Sunil Varma', up: '3h ago' }
+  ];
+  var cust = [
+    { n: 'Priya Sharma', e: 'priya.sharma@gmail.com', o: 12, sp: 214.6, j: 'Jan 2026' },
+    { n: 'Arjun Reddy', e: 'arjun.reddy@gmail.com', o: 8, sp: 96.3, j: 'Mar 2026' },
+    { n: 'Meera Nair', e: 'meera.nair@gmail.com', o: 5, sp: 188.1, j: 'Apr 2026' },
+    { n: 'Sana Khan', e: 'sana.khan@gmail.com', o: 17, sp: 305.8, j: 'Nov 2025' },
+    { n: 'Kiran Rao', e: 'kiran.rao@gmail.com', o: 3, sp: 61.4, j: 'Aug 2026' }
+  ];
+  var week = [['Mon', 820], ['Tue', 940], ['Wed', 760], ['Thu', 1180], ['Fri', 1040], ['Sat', 1320], ['Sun', 690]];
+  var prefs = { newOrder: true, lowStock: true, rxAlert: true, daily: false };
+  var pages = { overview: { t: 'Overview', i: 'fa-gauge-high' }, orders: { t: 'Orders', i: 'fa-box' }, inventory: { t: 'Inventory', i: 'fa-pills' }, rx: { t: 'Prescriptions', i: 'fa-file-prescription' }, customers: { t: 'Customers', i: 'fa-users' }, settings: { t: 'Settings', i: 'fa-gear' } };
+  var filter = 'all', q = '';
+
+  /* ---- Helpers ---- */
+  function tag(s, t) { return '<span class="tag s-' + s + '">' + (t || s.charAt(0).toUpperCase() + s.slice(1)) + '</span>'; }
+  function stat(ic, v, l, w) { return '<div class="stat' + (w ? ' w' : '') + '"><i class="fa-solid ' + ic + '"></i><b>' + v + '</b><small>' + l + '</small></div>'; }
+  function lvl(p) { return p.q === 0 ? 'out' : p.q < p.min ? 'low' : 'ok'; }
+  function lvlTxt(p) { return { out: 'Out of stock', low: 'Low stock', ok: 'In stock' }[lvl(p)]; }
+  function pending() { return orders.filter(function (o) { return o.st === 'processing'; }).length; }
+  function lowCount() { return stock.filter(function (p) { return lvl(p) !== 'ok'; }).length; }
+  function opts(cur) { return ['processing', 'shipped', 'delivered'].map(function (s) { return '<option value="' + s + '"' + (s === cur ? ' selected' : '') + '>' + s.charAt(0).toUpperCase() + s.slice(1) + '</option>'; }).join(''); }
+  function orderRows(list) {
+    return list.map(function (o) { var k = orders.indexOf(o); return '<tr><td><b>' + o.id + '</b><div class="t2">' + esc(o.c) + '</div></td><td>' + esc(o.item) + '</td><td><b>' + usd(o.amt) + '</b></td><td>' + tag(o.st) + '</td><td><select data-ost="' + k + '" aria-label="Update status for ' + o.id + '">' + opts(o.st) + '</select></td></tr>'; }).join('');
+  }
+  var ohead = '<thead><tr><th>Order</th><th>Item</th><th>Total</th><th>Status</th><th>Update</th></tr></thead>';
+  function rxCard(r, k) {
+    return '<div class="rx"><div class="ic"><i class="fa-solid fa-file-medical"></i></div><h4>' + esc(r.m) + '</h4><p>' + esc(r.c) + ' &middot; ' + esc(r.dr) + '<br>Uploaded ' + r.up + '</p>' + tag('review', 'Awaiting review') + '<div class="row"><button class="btn sm" data-ap="' + k + '"><i class="fa-solid fa-check"></i> Approve</button><button class="btn rg sm" data-rj="' + k + '"><i class="fa-solid fa-xmark"></i> Reject</button></div></div>';
+  }
+  function tog(k, t, s) { return '<div class="sr"><div><b>' + t + '</b><small>' + s + '</small></div><button class="sw' + (prefs[k] ? ' on' : '') + '" data-t="' + k + '" role="switch" aria-checked="' + prefs[k] + '" aria-label="' + t + '"></button></div>'; }
+
+  var views = {
+    overview: function () {
+      var rev = week.reduce(function (a, d) { return a + d[1]; }, 0), max = Math.max.apply(null, week.map(function (d) { return d[1]; }));
+      return '<div class="hero"><div><div class="eb">' + greet + '</div><h2>Welcome back, ' + esc(name) + '</h2><p>' + pending() + ' orders are waiting to be packed and ' + rxq.length + ' prescriptions need a pharmacist&rsquo;s review.</p></div>' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn amb" data-nav="rx"><i class="fa-solid fa-file-circle-check"></i> Review prescriptions</button><button class="btn gh" style="color:#fff;border-color:rgba(255,255,255,.45)" data-nav="orders">View orders</button></div></div>' +
+        '<section class="stats">' + stat('fa-indian-rupee-sign', usd(week[6][1]), 'Sales today') + stat('fa-box', pending(), 'Orders to pack') + stat('fa-file-prescription', rxq.length, 'Prescriptions to review') + stat('fa-triangle-exclamation', lowCount(), 'Items need restock', true) + '</section>' +
+        '<section class="g2"><div class="card"><div class="ch"><div><h3>Sales this week</h3><p>Total ' + usd(rev) + '</p></div></div><div class="chart">' +
+        week.map(function (d) { return '<div' + (d[1] === max ? ' class="hi"' : '') + '>' + usd(d[1]).replace('.00', '') + '<i data-h="' + Math.round(d[1] / max * 130) + '"></i>' + d[0] + '</div>'; }).join('') + '</div></div>' +
+        '<div class="card"><div class="ch"><div><h3>Needs restock</h3><p>Below minimum level</p></div><button class="btn gh sm" data-nav="inventory">Inventory</button></div><ul class="lst">' +
+        stock.filter(function (p) { return lvl(p) !== 'ok'; }).map(function (p) { return '<li><div><b>' + esc(p.n) + '</b><small>' + p.q + ' left &middot; min ' + p.min + '</small></div><div class="r">' + tag(lvl(p), lvlTxt(p)) + '</div></li>'; }).join('') + '</ul></div></section>' +
+        '<section class="g2"><div class="card"><div class="ch"><div><h3>Recent orders</h3><p>Update status as you pack and ship</p></div><button class="btn gh sm" data-nav="orders">See all</button></div><div class="tw"><table>' + ohead + '<tbody>' + orderRows(orders.slice(0, 4)) + '</tbody></table></div></div>' +
+        '<div class="card"><div class="ch"><div><h3>Prescription queue</h3><p>Oldest first</p></div><button class="btn gh sm" data-nav="rx">Open</button></div><ul class="lst">' +
+        rxq.map(function (r) { return '<li><div><b>' + esc(r.m) + '</b><small>' + esc(r.c) + ' &middot; ' + r.up + '</small></div></li>'; }).join('') + (rxq.length ? '' : '<li class="empty">All caught up.</li>') + '</ul></div></section>';
+    },
+    orders: function () {
+      var list = orders.filter(function (o) { return (filter === 'all' || o.st === filter) && (o.id + o.c + o.item).toLowerCase().indexOf(q) > -1; });
+      return '<div class="card"><div class="ch"><div><h3>All orders</h3><p>' + list.length + ' shown</p></div><div style="display:flex;gap:8px;flex-wrap:wrap"><input class="srch" id="oq" placeholder="Search order, customer or item" value="' + esc(q) + '" aria-label="Search orders"><select id="of" aria-label="Filter by status"><option value="all">All statuses</option>' + opts(filter).replace(' selected', '') .replace('value="' + filter + '"', 'value="' + filter + '" selected') + '</select></div></div>' +
+        '<div class="tw"><table>' + ohead + '<tbody>' + (orderRows(list) || '<tr><td colspan="5" class="empty">No orders match. Clear the search or change the status filter.</td></tr>') + '</tbody></table></div></div>';
+    },
+    inventory: function () {
+      return '<div class="card"><div class="ch"><div><h3>Inventory</h3><p>' + lowCount() + ' items need attention</p></div></div><div class="tw"><table><thead><tr><th>Product</th><th>SKU</th><th>Stock</th><th>Status</th><th>Action</th></tr></thead><tbody>' +
+        stock.map(function (p, k) { var pc = Math.min(100, Math.round(p.q / (p.min * 2) * 100)); return '<tr><td><b>' + esc(p.n) + '</b></td><td>' + p.s + '</td><td><div style="display:flex;align-items:center;gap:8px"><b>' + p.q + '</b><div class="pbar' + (lvl(p) === 'ok' ? '' : ' l') + '"><i style="width:' + pc + '%"></i></div></div></td><td>' + tag(lvl(p), lvlTxt(p)) + '</td><td><button class="btn sm" data-rs="' + k + '"><i class="fa-solid fa-plus"></i> Restock +50</button></td></tr>'; }).join('') + '</tbody></table></div></div>';
+    },
+    rx: function () {
+      return rxq.length ? '<div class="pg">' + rxq.map(rxCard).join('') + '</div>' : '<div class="card empty"><i class="fa-solid fa-circle-check" style="font-size:2rem;color:var(--ok);margin-bottom:8px"></i><p>No prescriptions waiting. New uploads from customers will appear here.</p></div>';
+    },
+    customers: function () {
+      return '<div class="card"><div class="ch"><div><h3>Customers</h3><p>' + cust.length + ' registered</p></div></div><div class="tw"><table><thead><tr><th>Customer</th><th>Orders</th><th>Total spent</th><th>Joined</th></tr></thead><tbody>' +
+        cust.map(function (c) { return '<tr><td><b>' + esc(c.n) + '</b><div class="t2">' + esc(c.e) + '</div></td><td>' + c.o + '</td><td><b>' + usd(c.sp) + '</b></td><td>' + c.j + '</td></tr>'; }).join('') + '</tbody></table></div></div>';
+    },
+    settings: function () {
+      return '<div class="card"><div class="ch"><div><h3>Admin profile</h3><p>Your account details</p></div></div><div class="prof"><span class="av">' + esc(ini) + '</span><h3 style="font-family:var(--fh);font-weight:400;text-transform:capitalize">' + esc(name) + '</h3><small style="color:var(--mut)">' + esc(email) + '</small></div></div>' +
+        '<div class="card"><div class="ch"><div><h3>Alerts</h3><p>Choose what the admin panel notifies you about</p></div></div>' + tog('newOrder', 'New orders', 'Alert when a customer places an order') + tog('lowStock', 'Low stock', 'Alert when an item drops below its minimum') + tog('rxAlert', 'Prescription uploads', 'Alert when a prescription needs review') + tog('daily', 'Daily summary', 'Email a sales summary every evening') + '</div>' +
+        '<div class="card" style="text-align:center"><div class="ch" style="justify-content:center"><div><h3>Session</h3><p>Signed in as ' + esc(email) + '</p></div></div><button class="btn red" id="setLo"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></div>';
+    }
+  };
+
+  /* ---- Rendering ---- */
+  var cur = localStorage.getItem('stacklyAdminNav'); if (!pages[cur]) cur = 'overview';
+  function nav() {
+    $('navMain').innerHTML = Object.keys(pages).map(function (k) {
+      var n = k === 'orders' ? pending() : k === 'rx' ? rxq.length : k === 'inventory' ? lowCount() : 0;
+      return '<button data-nav="' + k + '" class="' + (k === cur ? 'on' : '') + '"><i class="fa-solid ' + pages[k].i + '"></i>' + pages[k].t + (n ? '<span class="n">' + n + '</span>' : '') + '</button>';
+    }).join('');
+  }
+  function render(keepScroll) {
+    $('title').textContent = pages[cur].t;
+    $('content').innerHTML = views[cur](); nav();
+    if (!keepScroll) scrollTo(0, 0);
+    requestAnimationFrame(function () { [].forEach.call(document.querySelectorAll('[data-h]'), function (b) { b.style.height = b.getAttribute('data-h') + 'px'; }); });
+    var b = $('setLo'); if (b) b.addEventListener('click', logout);
+    var s = $('oq'); if (s) s.addEventListener('input', function () { q = s.value.toLowerCase(); var p = s.selectionStart; render(true); var n = $('oq'); n.focus(); n.setSelectionRange(p, p); });
+    var f = $('of'); if (f) f.addEventListener('change', function () { filter = f.value; render(true); });
+  }
+  function side(open) { $('side').classList.toggle('open', open); $('ov').classList.toggle('show', open); document.body.style.overflow = open ? 'hidden' : ''; }
+
+  $('sName').textContent = name; $('sMail').textContent = email; $('sAv').textContent = ini; $('tAv').textContent = ini;
+  $('burger').addEventListener('click', function () { side(true); });
+  $('closeSide').addEventListener('click', function () { side(false); });
+  $('ov').addEventListener('click', function () { side(false); });
+  $('logoutBtn').addEventListener('click', logout);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') side(false); });
+  document.addEventListener('change', function (e) {
+    var s = e.target.closest && e.target.closest('[data-ost]');
+    if (s) { var o = orders[+s.getAttribute('data-ost')]; o.st = s.value; toast(o.id + ' marked as ' + o.st + '.'); render(true); }
+  });
+  document.addEventListener('click', function (e) {
+    var n = e.target.closest('[data-nav]');
+    if (n) { cur = n.getAttribute('data-nav'); localStorage.setItem('stacklyAdminNav', cur); side(false); render(); return; }
+    var a = e.target.closest('[data-ap]');
+    if (a) { var r = rxq.splice(+a.getAttribute('data-ap'), 1)[0]; toast('Approved ' + r.m + ' for ' + r.c + '.'); render(true); return; }
+    var j = e.target.closest('[data-rj]');
+    if (j) { var d = rxq.splice(+j.getAttribute('data-rj'), 1)[0]; toast('Rejected ' + d.m + '. ' + d.c + ' will be notified.'); render(true); return; }
+    var rs = e.target.closest('[data-rs]');
+    if (rs) { var p = stock[+rs.getAttribute('data-rs')]; p.q += 50; toast(p.n + ' restocked. Now ' + p.q + ' in stock.'); render(true); return; }
+    var t = e.target.closest('[data-t]');
+    if (t) { var k = t.getAttribute('data-t'); prefs[k] = !prefs[k]; t.classList.toggle('on', prefs[k]); t.setAttribute('aria-checked', prefs[k]); }
+  });
+  render();
+})();
+</script>
+</body>
+</html>

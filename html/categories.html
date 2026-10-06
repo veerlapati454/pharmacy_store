@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories - Stackly Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/categories.css">
+  <script>if("scrollRestoration" in history)history.scrollRestoration="manual";</script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="./categories.html" class="nav-link active">Categories</a></li>
+          <li><a href="./medicines.html" class="nav-link">Medicines</a></li>
+          <li><a href="./services.html" class="nav-link">Services</a></li>
+          <li><a href="./deals.html" class="nav-link">Offers</a></li>
+          <li><a href="./contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="View Cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+        <a href="./login.html" class="btn btn-login" id="loginBtn"><i class="fa-regular fa-user"></i> <span>Login</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="../index.html" class="logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+      <button class="close-drawer" id="closeDrawer">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="./categories.html" class="mobile-nav-link active">Categories</a></li>
+      <li><a href="./medicines.html" class="mobile-nav-link">Medicines</a></li>
+      <li><a href="./services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="./deals.html" class="mobile-nav-link">Offers</a></li>
+      <li><a href="./contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer"><a href="./login.html" class="btn btn-primary btn-block" id="mobileLoginBtn">Login / Register</a></div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <main>
+    <!-- 1. PAGE HERO -->
+    <section class="page-hero">
+      <i class="fa-solid fa-pills float-ic f1"></i><i class="fa-solid fa-capsules float-ic f2"></i><i class="fa-solid fa-plus float-ic f3"></i><i class="fa-solid fa-heart-pulse float-ic f4"></i>
+      <div class="container ph-inner">
+        <nav class="crumbs"><a href="../index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Categories</span></nav>
+        <span class="badge">Shop by Need</span>
+        <h1 class="ph-title">Every Health Category, One Trusted Place</h1>
+        <p class="ph-sub">Browse genuine medicines, wellness essentials and family care &mdash; neatly organised so you find what you need in seconds.</p>
+        <div class="cat-search"><i class="fa-solid fa-magnifying-glass"></i><input type="search" id="catSearch" placeholder="Search a category, e.g. vitamins" aria-label="Search categories"></div>
+      </div>
+    </section>
+
+    <!-- 2. CATEGORY GRID -->
+    <section class="section cat-sec" id="all">
+      <div class="container">
+        <div class="section-header"><span class="section-subtitle">Our Collection</span><h2 class="section-title">Explore All Categories</h2><p class="section-desc">Hover or tap a card to discover what&rsquo;s inside.</p></div>
+        <div class="chips" id="chips">
+          <button class="chip active" data-filter="all">All</button><button class="chip" data-filter="medicines">Medicines</button><button class="chip" data-filter="wellness">Wellness</button><button class="chip" data-filter="baby">Mother &amp; Baby</button><button class="chip" data-filter="devices">Devices</button><button class="chip" data-filter="personal">Personal Care</button>
+        </div>
+        <div class="cat-grid" id="catGrid">
+        <div class="cat-item flip-card" data-group="medicines" data-name="Medicines" tabindex="0"><div class="flip-inner">
+          <div class="cf-front"><img src="../assets/g9.webp" alt="Medicines" loading="lazy"><div class="cf-over"><span class="cf-ic"><i class="fa-solid fa-pills"></i></span><h3>Medicines</h3><p>240+ products</p></div></div>
+          <div class="cf-back"><h3>Medicines</h3><p>Prescription & everyday OTC medicines from trusted brands.</p><div class="cf-tags"><span>Pain Relief</span><span>Cold & Flu</span><span>Antibiotics</span></div><a href="./404.html" class="cf-link">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div></div>
+        <div class="cat-item flip-card" data-group="wellness" data-name="Vitamins & Supplements" tabindex="0"><div class="flip-inner">
+          <div class="cf-front"><img src="../assets/g10.webp" alt="Vitamins & Supplements" loading="lazy"><div class="cf-over"><span class="cf-ic"><i class="fa-solid fa-capsules"></i></span><h3>Vitamins & Supplements</h3><p>180+ products</p></div></div>
+          <div class="cf-back"><h3>Vitamins & Supplements</h3><p>Daily nutrition, immunity boosters and herbal wellness.</p><div class="cf-tags"><span>Multivitamins</span><span>Omega-3</span><span>Immunity</span></div><a href="./404.html" class="cf-link">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div></div>
+        <div class="cat-item flip-card" data-group="baby" data-name="Mother & Baby" tabindex="0"><div class="flip-inner">
+          <div class="cf-front"><img src="../assets/g11.webp" alt="Mother & Baby" loading="lazy"><div class="cf-over"><span class="cf-ic"><i class="fa-solid fa-baby"></i></span><h3>Mother & Baby</h3><p>150+ products</p></div></div>
+          <div class="cf-back"><h3>Mother & Baby</h3><p>Gentle, dermatologist-tested care for mums and little ones.</p><div class="cf-tags"><span>Baby Care</span><span>Diapers</span><span>Pregnancy</span></div><a href="./404.html" class="cf-link">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div></div>
+        <div class="cat-item flip-card" data-group="devices" data-name="Health Devices" tabindex="0"><div class="flip-inner">
+          <div class="cf-front"><img src="../assets/g12.webp" alt="Health Devices" loading="lazy"><div class="cf-over"><span class="cf-ic"><i class="fa-solid fa-stethoscope"></i></span><h3>Health Devices</h3><p>90+ products</p></div></div>
+          <div class="cf-back"><h3>Health Devices</h3><p>Accurate monitors and diagnostics for home use.</p><div class="cf-tags"><span>BP Monitors</span><span>Glucometers</span><span>Thermometers</span></div><a href="./404.html" class="cf-link">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div></div>
+        <div class="cat-item flip-card" data-group="personal" data-name="Skin & Personal Care" tabindex="0"><div class="flip-inner">
+          <div class="cf-front"><img src="../assets/g13.webp" alt="Skin & Personal Care" loading="lazy"><div class="cf-over"><span class="cf-ic"><i class="fa-solid fa-spa"></i></span><h3>Skin & Personal Care</h3><p>320+ products</p></div></div>
+          <div class="cf-back"><h3>Skin & Personal Care</h3><p>Dermatologist-recommended skincare, hair and hygiene.</p><div class="cf-tags"><span>Skincare</span><span>Hair Care</span><span>Oral Care</span></div><a href="./404.html" class="cf-link">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div></div>
+        <div class="cat-item flip-card" data-group="medicines" data-name="Diabetes Care" tabindex="0"><div class="flip-inner">
+          <div class="cf-front"><img src="../assets/g14.webp" alt="Diabetes Care" loading="lazy"><div class="cf-over"><span class="cf-ic"><i class="fa-solid fa-syringe"></i></span><h3>Diabetes Care</h3><p>110+ products</p></div></div>
+          <div class="cf-back"><h3>Diabetes Care</h3><p>Sugar monitors, strips, insulin accessories and diet foods.</p><div class="cf-tags"><span>Test Strips</span><span>Insulin Pens</span><span>Sugar-Free</span></div><a href="./404.html" class="cf-link">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div></div>
+        <div class="cat-item flip-card" data-group="devices" data-name="First Aid & Safety" tabindex="0"><div class="flip-inner">
+          <div class="cf-front"><img src="../assets/g15.webp" alt="First Aid & Safety" loading="lazy"><div class="cf-over"><span class="cf-ic"><i class="fa-solid fa-kit-medical"></i></span><h3>First Aid & Safety</h3><p>130+ products</p></div></div>
+          <div class="cf-back"><h3>First Aid & Safety</h3><p>Kits, bandages, masks and sanitisers for every home.</p><div class="cf-tags"><span>First Aid Kits</span><span>Masks</span><span>Sanitisers</span></div><a href="./404.html" class="cf-link">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div></div>
+        <div class="cat-item flip-card" data-group="wellness" data-name="Ayurveda & Herbal" tabindex="0"><div class="flip-inner">
+          <div class="cf-front"><img src="../assets/g16.webp" alt="Ayurveda & Herbal" loading="lazy"><div class="cf-over"><span class="cf-ic"><i class="fa-solid fa-leaf"></i></span><h3>Ayurveda & Herbal</h3><p>200+ products</p></div></div>
+          <div class="cf-back"><h3>Ayurveda & Herbal</h3><p>Time-tested herbal remedies and natural healing.</p><div class="cf-tags"><span>Herbal Tonics</span><span>Chyawanprash</span><span>Oils</span></div><a href="./404.html" class="cf-link">Explore <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div></div>
+        </div>
+        <p class="cat-empty" id="catEmpty" hidden>No category found &mdash; try another word.</p>
+      </div>
+    </section>
+
+    <!-- 3. HEALTH CONCERNS -->
+    <section class="section concerns-sec">
+      <div class="container">
+        <div class="section-header"><span class="section-subtitle">Shop by Concern</span><h2 class="section-title">What Are You Looking For?</h2><p class="section-desc">Jump straight to products for common health needs.</p></div>
+        <div class="concern-grid"><a href="./404.html" class="concern"><i class="fa-solid fa-snowflake"></i><span>Cold & Flu</span></a><a href="./404.html" class="concern"><i class="fa-solid fa-droplet"></i><span>Diabetes</span></a><a href="./404.html" class="concern"><i class="fa-solid fa-heart-pulse"></i><span>Heart Health</span></a><a href="./404.html" class="concern"><i class="fa-solid fa-bone"></i><span>Joint & Pain</span></a><a href="./404.html" class="concern"><i class="fa-solid fa-seedling"></i><span>Digestion</span></a><a href="./404.html" class="concern"><i class="fa-solid fa-brain"></i><span>Sleep & Stress</span></a></div>
+      </div>
+    </section>
+
+    <!-- 4. STATS -->
+    <section class="stats-sec">
+      <div class="container stats-grid">
+        <div class="stat"><span class="cnt" data-to="50" data-suf="k+">0</span><p>Products</p></div>
+        <div class="stat"><span class="cnt" data-to="200" data-suf="+">0</span><p>Trusted Brands</p></div>
+        <div class="stat"><span class="cnt" data-to="12" data-suf="k+">0</span><p>Prescriptions Filled</p></div>
+        <div class="stat"><span class="cnt" data-to="99" data-suf="%">0</span><p>Happy Customers</p></div>
+      </div>
+    </section>
+
+    <!-- 5. FEATURE SPLIT -->
+    <section class="section split-sec">
+      <div class="container">
+        <div class="split">
+          <div class="split-img"><img src="../assets/g18.webp" alt="Assorted wellness supplements" loading="lazy"><span class="split-tag"><i class="fa-solid fa-leaf"></i> Curated by Pharmacists</span></div>
+          <div class="split-txt">
+            <span class="badge">Why Our Categories</span>
+            <h2 class="section-title">Organised By Experts, Made For You</h2>
+            <p>Each category is reviewed by licensed pharmacists so you only see safe, effective and fairly priced products.</p>
+            <ul class="ticks"><li><i class="fa-solid fa-circle-check"></i> Verified, genuine brands only</li><li><i class="fa-solid fa-circle-check"></i> Clear usage and safety information</li><li><i class="fa-solid fa-circle-check"></i> Smart filters for faster shopping</li></ul>
+            <a href="./products.html" class="btn btn-primary">View All Medicines <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. HOW IT WORKS -->
+    <section class="section steps-sec">
+      <div class="container">
+        <div class="section-header"><span class="section-subtitle">Simple Process</span><h2 class="section-title">Shop Smart in 4 Steps</h2></div>
+        <div class="steps"><span class="steps-line"></span><div class="step"><span class="step-n">1</span><i class="fa-solid fa-magnifying-glass"></i><h4>Search</h4><p>Find medicines by name, brand or health concern.</p></div><div class="step"><span class="step-n">2</span><i class="fa-solid fa-scale-balanced"></i><h4>Compare</h4><p>Check ingredients, strengths and prices side by side.</p></div><div class="step"><span class="step-n">3</span><i class="fa-solid fa-user-doctor"></i><h4>Consult</h4><p>Ask our pharmacist if you are unsure about anything.</p></div><div class="step"><span class="step-n">4</span><i class="fa-solid fa-box-open"></i><h4>Order</h4><p>Checkout securely and get it delivered fast.</p></div></div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section faq-sec">
+      <div class="container">
+        <div class="section-header"><span class="section-subtitle">Good To Know</span><h2 class="section-title">Frequently Asked Questions</h2></div>
+        <div class="faq"><div class="faq-item"><button class="faq-q" type="button">Are all medicines genuine?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Yes. Every product is sourced from licensed distributors and checked by our pharmacists before dispatch.</p></div></div><div class="faq-item"><button class="faq-q" type="button">Do I need a prescription?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Prescription medicines need a valid prescription. Over-the-counter items can be ordered directly.</p></div></div><div class="faq-item"><button class="faq-q" type="button">How fast is delivery?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Most orders are delivered within 24 hours in our service area, with free delivery above $30.</p></div></div><div class="faq-item"><button class="faq-q" type="button">Can I return a product?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Sealed, unopened items can be returned within 7 days. Medicines that were opened cannot be returned.</p></div></div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. CTA -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="cta-badge">Need Help Choosing?</span>
+        <h2>Not Sure Where To Start? Ask Our Pharmacist</h2>
+        <p>Share your health need and get friendly, expert guidance on the right products &mdash; free.</p>
+        <div class="cta-actions"><a href="./contact.html" class="btn btn-light">Talk to a Pharmacist <i class="fa-solid fa-arrow-right"></i></a><a href="./products.html" class="btn btn-ghost">Shop Medicines</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo footer-logo"><img src="../assets/stackly_logo.webp" alt="Stackly" class="logo-img"></a>
+          <p class="footer-text">Your trusted neighbourhood pharmacy for medicines, wellness and caring advice.</p>
+          <div class="social-links">
+            <a href="./404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="./404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="./404.html" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="./404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Shop by Category</h4>
+          <ul class="footer-links">
+            <li><a href="./404.html">Medicines</a></li><li><a href="./404.html">Vitamins</a></li>
+            <li><a href="./404.html">Mother &amp; Baby</a></li><li><a href="./404.html">Health Devices</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li><li><a href="./categories.html">Categories</a></li>
+            <li><a href="./medicines.html">Medicines</a></li><li><a href="./services.html">Services</a></li>
+            <li><a href="./deals.html">Offers</a></li><li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <p class="footer-address">MMR Complex, Periyakollappatty<br>Chinna Thirupathi, Salem,<br>Tamil Nadu 636008<br>Open Mon&ndash;Sat, 8:00 AM &ndash; 9:00 PM</p>
+          <p class="footer-address"><a href="./404.html">+91 40 6677 8899</a><br><a href="./404.html">care@stackly.com</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Stackly Pharmacy. All rights reserved. Always consult a doctor before taking medicines.</p></div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header"><h3>Your Cart (<span id="cartCount">0</span>)</h3><button class="close-cart" id="closeCart">&times;</button></div>
+    <div class="cart-items" id="cartItemsContainer"><div class="empty-cart-msg">Your cart is currently empty.</div></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total:</span><strong id="cartTotalPrice">$0.00</strong></div>
+      <a href="./404.html" class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card quickview-card">
+      <button class="modal-close" id="closeQuickView">&times;</button>
+      <div class="quickview-grid">
+        <div class="quickview-img"><img id="qvImage" src="" alt="Product"></div>
+        <div class="quickview-info">
+          <span class="badge" id="qvCategory">Category</span>
+          <h3 id="qvTitle">Product</h3>
+          <p class="qv-price" id="qvPrice">$0.00</p>
+          <p class="qv-desc">Quality-checked and sourced from licensed suppliers. Read the label and consult your pharmacist before use.</p>
+          <button type="button" class="btn btn-primary btn-block" id="qvAddToCartBtn"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" id="toTopRing"/></svg><i class="fa-solid fa-arrow-up"></i></button>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="toast" id="toast">Item added to cart!</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/categories.js"></script>
+</body>
+</html>
