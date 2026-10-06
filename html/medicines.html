@@ -10,33 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/categories.css"><!-- shared page-hero, chips, split, FAQ styles -->
-  <style>/* MEDICINES PAGE STYLES (also saved as css/products.css) */
-/* MEDICINES PAGE */
-.sort-bar{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:30px;font-weight:700}
-.sort-bar select{padding:10px 18px;border-radius:50px;border:2px solid var(--border-color);font:inherit;background:#fff;color:var(--text-dark);outline:none;cursor:pointer}
-.sort-bar select:focus{border-color:var(--primary)}
-.product-card[hidden]{display:none}
-.rx-sec{background:#fff}
-.deals.section{padding-top:40px}
-.rv3{grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))}
-@media(max-width:768px){.sort-bar{flex-direction:column;gap:8px}}
-
-/* BRANDS MARQUEE + NUMBERS */
-.brands-sec{background:linear-gradient(180deg,var(--bg-light),#fff);overflow:hidden}
-.brand-rows{display:flex;flex-direction:column;gap:16px;margin:0 0 44px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.brand-row{overflow:hidden;white-space:nowrap}
-.brand-track{display:inline-flex;gap:16px;padding-left:16px;animation:brandL 32s linear infinite}
-.brand-row.rev .brand-track{animation-name:brandR;animation-duration:38s}
-.brand-row:hover .brand-track{animation-play-state:paused}
-.brand{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:50px;background:#fff;border:1px solid var(--border-color);box-shadow:var(--shadow-sm);font-weight:800;color:var(--secondary);transition:var(--transition)}
-.brand i{color:var(--primary);font-size:1.1rem}
-.brand:hover{background:var(--primary);color:#fff;transform:scale(1.06)}.brand:hover i{color:#fff}
-@keyframes brandL{to{transform:translateX(-50%)}}
-@keyframes brandR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.brand-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,45%),1fr));gap:24px;padding:40px 24px;border-radius:var(--radius-lg);background:linear-gradient(120deg,#0A2E2B,#0E9F8E);color:#fff;text-align:center;box-shadow:var(--shadow-lg)}
-@media(prefers-reduced-motion:reduce){.brand-track{animation:none}}
-@media(max-width:768px){.brand{padding:11px 20px;font-size:.9rem}.brand-stats{padding:30px 16px}}
-</style>
+  <link rel="stylesheet" href="../css/medicines.css">
   <script>if("scrollRestoration" in history)history.scrollRestoration="manual";</script>
 </head>
 <body>
@@ -154,7 +128,7 @@
       </div>
     </section>
 
-    <!-- 4. BRANDS + NUMBERS -->
+    <!-- 4. BRANDS + NUMBERS (real numbers in HTML as fallback; JS animates them) -->
     <section class="section brands-sec">
       <div class="container">
         <div class="section-header"><span class="section-subtitle">Trusted Brands</span><h2 class="section-title">Only Brands We Trust</h2><p class="section-desc">Every product comes from licensed manufacturers and distributors.</p></div>
@@ -165,10 +139,10 @@
       </div>
       <div class="container">
         <div class="brand-stats">
-          <div class="stat"><span class="cnt" data-to="200" data-suf="+">0</span><p>Trusted Brands</p></div>
-          <div class="stat"><span class="cnt" data-to="50" data-suf="k+">0</span><p>Products</p></div>
-          <div class="stat"><span class="cnt" data-to="12" data-suf="k+">0</span><p>Prescriptions Filled</p></div>
-          <div class="stat"><span class="cnt" data-to="99" data-suf="%">0</span><p>Happy Customers</p></div>
+          <div class="stat"><span class="cnt" data-to="200" data-suf="+">200+</span><p>Trusted Brands</p></div>
+          <div class="stat"><span class="cnt" data-to="50" data-suf="k+">50k+</span><p>Products</p></div>
+          <div class="stat"><span class="cnt" data-to="12" data-suf="k+">12k+</span><p>Prescriptions Filled</p></div>
+          <div class="stat"><span class="cnt" data-to="99" data-suf="%">99%</span><p>Happy Customers</p></div>
         </div>
       </div>
     </section>
@@ -290,6 +264,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="../js/script.js"></script>
-  <script src="../js/products.js"></script>
+  <script src="../js/medicines.js"></script>
 </body>
 </html>

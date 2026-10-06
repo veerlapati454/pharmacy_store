@@ -19,13 +19,37 @@
   document.getElementById('prodSearch').addEventListener('input', e => { term = e.target.value.trim().toLowerCase(); apply(true); });
   document.getElementById('sortSel').addEventListener('change', e => { sort = e.target.value; apply(true); });
 
+  /* FAQ accordion */
   q('.faq-item').forEach(it => it.querySelector('.faq-q').addEventListener('click', () => {
     const open = it.classList.contains('open');
     q('.faq-item.open').forEach(o => { o.classList.remove('open'); if (window.gsap) gsap.to(o.querySelector('.faq-a'), { height: 0, duration: .35 }); });
     if (!open) { it.classList.add('open'); const a = it.querySelector('.faq-a'); if (window.gsap) gsap.to(a, { height: 'auto', duration: .4 }); else a.style.height = 'auto'; }
   }));
 
-  if (typeof gsap === 'undefined' || matchMedia('(prefers-reduced-motion: reduce)').matches) { q('.cnt').forEach(e => e.textContent = e.dataset.to + e.dataset.suf); return; }
+  /* COUNTERS (independent of GSAP; real number shown by default) */
+  (function counters() {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    q('.cnt').forEach(el => {
+      const to = +el.dataset.to, suf = el.dataset.suf || '';
+      el.textContent = to + suf;
+      if (reduce || !('IntersectionObserver' in window)) return;
+      let started = false;
+      const run = () => {
+        if (started) return; started = true;
+        const t0 = performance.now(), dur = 2000;
+        (function tick(now) {
+          const p = Math.min((now - t0) / dur, 1);
+          el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))) + suf;
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      };
+      new IntersectionObserver((en, io) => {
+        if (en[0].isIntersecting) { io.disconnect(); run(); }
+      }, { threshold: 0.2 }).observe(el);
+    });
+  })();
+
+  if (typeof gsap === 'undefined' || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
   const mobile = matchMedia('(max-width: 992px)').matches;
 
@@ -59,11 +83,6 @@
   reveal('.split-txt > *', { y: 30 }, '.split', { s: .12 });
   reveal('.brand-row', { x: 80 }, '.brand-rows', { s: .2, d: 1 });
   reveal('.brand-stats .stat', { y: 40, rotationX: -70, transformPerspective: 900 }, '.brand-stats', { s: .12, d: .8 });
-  q('.cnt').forEach(el => {
-    const o = { v: 0 };
-    new IntersectionObserver((en, io) => { if (en[0].isIntersecting) { io.disconnect();
-      gsap.to(o, { v: +el.dataset.to, duration: 2, ease: 'power2.out', onUpdate: () => el.textContent = Math.round(o.v) + el.dataset.suf }); } }, { threshold: .4 }).observe(el);
-  });
   reveal('.deals-content', mobile ? { y: 40 } : { x: -60 }, '.deals-wrapper', { d: 1 });
   reveal('.deals-img-box', mobile ? { y: 40 } : { x: 60 }, '.deals-wrapper', { d: 1 });
   reveal('.reviews-grid > *', { y: 60, rotationX: -50, transformPerspective: 900, transformOrigin: '50% 0%' }, '.reviews-grid', { s: .15 });
