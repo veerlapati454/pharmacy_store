@@ -15,13 +15,13 @@
 html,body{max-width:100%;overflow-x:clip}
 body{font-family:var(--fb);background:var(--bg);color:#12332F;-webkit-font-smoothing:antialiased}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-a{color:inherit;text-decoration:none}ul{list-style:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}img{max-width:100%;display:block}
 :focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 .app{display:flex;min-height:100vh}
 
 /* sidebar */
 .side{position:fixed;inset:0 auto 0 0;width:min(var(--sw),86vw);z-index:50;display:flex;flex-direction:column;padding:20px 14px;color:#fff;overflow-y:auto;background:radial-gradient(circle at 10% 0,rgba(14,159,142,.5),transparent 50%),linear-gradient(170deg,var(--ink2),var(--ink))}
-.brand{display:flex;justify-content:center;margin-bottom:14px;font-family:var(--fh);font-size:1.9rem;line-height:56px;color:#fff}
+.brand{display:flex;justify-content:center;margin-bottom:14px}.brand img{height:56px;width:auto}
 .x{display:none;position:absolute;top:35px;right:14px;width:36px;height:36px;place-items:center;border-radius:50%;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);transition:.25s}
 .x:hover{background:var(--acc);color:var(--ink);transform:rotate(90deg)}
 .grp{font-size:.68rem;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.45);margin:14px 10px 6px;font-weight:800}
@@ -166,8 +166,13 @@ tbody tr:hover{background:rgba(14,159,142,.06)}
   <div class="ov" id="ov"></div>
   <aside class="side" id="side">
     <button class="x" id="closeSide" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
-    <a href="../index.html" class="brand">Stackly</a>
+    <a href="../index.html" class="brand"><img src="../assets/stackly_logo.webp" alt="Stackly"></a>
     <p class="grp">My account</p><nav class="nav" id="navMain"></nav>
+    <p class="grp">Quick links</p>
+    <nav class="nav">
+      <a href="./products.html"><i class="fa-solid fa-bag-shopping"></i> Shop Medicines</a>
+      <a href="../index.html"><i class="fa-solid fa-house"></i> Back to Home</a>
+    </nav>
     <div class="su"><span class="av" id="sAv">?</span><div><b id="sName">Customer</b><small id="sMail">&mdash;</small></div></div>
     <button class="lo" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
   </aside>
